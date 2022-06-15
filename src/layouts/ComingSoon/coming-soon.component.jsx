@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 
 import * as S from "./coming-soon.styles"
 import { Container } from "@mui/material"
@@ -7,12 +7,29 @@ import DiipLogo from "../../assets/diip.svg"
 import PoweredByLogo from "../../assets/powered-by.svg"
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined"
 
+import gsap from "gsap"
+
+import Blue from "../../assets/blue.svg"
+
 const ComingSoon = () => {
+  const blueBlurRef = useRef(null)
+  const redBlurRef = useRef(null)
+  const yellowBlurRef = useRef(null)
+  useEffect(() => {
+    gsap.to(blueBlurRef.current, {
+      y: -100,
+      duration: 4,
+      repeat: -1,
+      yoyo: true,
+    })
+  }, [])
   return (
     <S.Wrapper>
-      <S.BlueBlur />
-      <S.RedBlur />
-      <S.YellowBlur />
+      <S.BlueWrapper ref={blueBlurRef}>
+        <Blue />
+      </S.BlueWrapper>
+      <S.RedBlur ref={redBlurRef} />
+      <S.YellowBlur ref={yellowBlurRef} />
       <Container>
         <S.ContentWrapper>
           <DiipLogo />

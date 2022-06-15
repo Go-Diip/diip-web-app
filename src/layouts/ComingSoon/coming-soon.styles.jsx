@@ -70,7 +70,7 @@ export const ButtonWrapper = styled.div`
   gap: 8px;
 `
 
-export const BlueBlur = styled(Blue)`
+export const BlueWrapper = styled.div`
   position: absolute;
   z-index: 2;
   top: -25%;
