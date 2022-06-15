@@ -1,10 +1,7 @@
 import styled from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
-import { Typography } from "@mui/material"
+import { Container, Typography } from "@mui/material"
 import CustomButton from "../../components/custom-button/custom-button.component"
-import Blue from "../../assets/blue.svg"
-import Yellow from "../../assets/yellow.svg"
-import Red from "../../assets/red.svg"
 
 export const Wrapper = styled(SectionWrapper)`
   position: relative;
@@ -15,6 +12,7 @@ export const Wrapper = styled(SectionWrapper)`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `
 
 export const ContentWrapper = styled.div`
@@ -34,23 +32,35 @@ export const BottomWrapper = styled.div`
   width: 100vw;
   bottom: 0;
   left: 0;
-  padding: 3rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(29, 9, 2, 0.25);
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    padding: 3rem 0;
+  }
 `
 
 export const Title = styled.h1`
+  font-size: ${({ theme }) => theme.typography.pxToRem(32)};
+  line-height: normal;
   font-weight: 600;
-  font-size: ${({ theme }) => theme.typography.pxToRem(48)};
-  line-height: 72px;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    font-size: ${({ theme }) => theme.typography.pxToRem(48)};
+    line-height: 72px;
+  }
 `
 
 export const Description = styled(Typography)`
   font-weight: 400;
-  font-size: ${({ theme }) => theme.typography.pxToRem(24)};
-  line-height: 36px;
+  font-size: ${({ theme }) => theme.typography.pxToRem(16)};
+  line-height: normal;
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    font-size: ${({ theme }) => theme.typography.pxToRem(24)};
+    line-height: 36px;
+  }
 `
 
 export const Button = styled(CustomButton)`
@@ -76,14 +86,23 @@ export const BlueWrapper = styled.div`
   top: -25%;
   left: 35%;
 `
-export const RedBlur = styled(Red)`
+export const RedWrapper = styled.div`
   position: absolute;
   z-index: 2;
   top: -40%;
   left: -10%;
 `
-export const YellowBlur = styled(Yellow)`
+export const YellowWrapper = styled.div`
   position: absolute;
   z-index: 2;
   top: 10%;
+`
+
+export const CustomContainer = styled(Container)`
+  position: relative;
+  z-index: 3;
+`
+
+export const ExternalLink = styled.a`
+  text-decoration: none;
 `
