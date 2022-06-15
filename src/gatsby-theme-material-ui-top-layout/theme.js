@@ -4,8 +4,7 @@ const theme = createTheme({
   navHeight: 74,
   sectionPadding: "padding-top: 1.5em; padding-bottom: 1.5em;",
   fonts: {
-    primary: "DM Sans, sans-serif",
-    secondary: "Bebas Neue, sans-serif",
+    primary: "Poppins",
   },
   layout: {
     contentWidth: 1236,
@@ -13,9 +12,9 @@ const theme = createTheme({
   palette: {
     primary: {
       // contrastText: "rgba(0, 0, 0, 0.87)",
-      main: "#F26B2A",
-      light: "#FFFFFF",
-      dark: "#091118",
+      main: "#E65924",
+      light: "#F7FBFF",
+      dark: "#1D0902",
     },
     secondary: {
       // contrastText: "rgba(0, 0, 0, 0.87)",
@@ -41,7 +40,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `"DM Sans", "Open Sans", "Arial", sans-serif`,
+    fontFamily: `"Poppins", "Open Sans", "Arial", sans-serif`,
   },
 })
 

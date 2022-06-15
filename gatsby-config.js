@@ -66,12 +66,8 @@ module.exports = {
           fonts: {
             google: [
               {
-                family: `DM Sans`,
-                variants: [`400`, `500`, `700`],
-              },
-              {
-                family: `Bebas Neue`,
-                variants: [`400`, `500`, `700`],
+                family: `Poppins`,
+                variants: [`400`, `500`, `600`, `700`],
               },
             ],
           },
@@ -94,16 +90,16 @@ module.exports = {
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from WordPress.
      */
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        /*
-         * The full URL of the WordPress site's GraphQL API.
-         * Example : 'https://www.example-site.com/graphql'
-         */
-        url: `${process.env.WORDPRESS_URL}/graphql`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-wordpress`,
+    //   options: {
+    //     /*
+    //      * The full URL of the WordPress site's GraphQL API.
+    //      * Example : 'https://www.example-site.com/graphql'
+    //      */
+    //     url: `${process.env.WORDPRESS_URL}/graphql`,
+    //   },
+    // },
 
     {
       resolve: "gatsby-plugin-react-svg",
