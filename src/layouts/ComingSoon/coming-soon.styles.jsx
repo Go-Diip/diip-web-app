@@ -2,6 +2,9 @@ import styled from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
 import { Typography } from "@mui/material"
 import CustomButton from "../../components/custom-button/custom-button.component"
+import Blue from "../../assets/blue.svg"
+import Yellow from "../../assets/yellow.svg"
+import Red from "../../assets/red.svg"
 
 export const Wrapper = styled(SectionWrapper)`
   position: relative;
@@ -40,13 +43,13 @@ export const BottomWrapper = styled.div`
 
 export const Title = styled.h1`
   font-weight: 600;
-  font-size: 48px;
+  font-size: ${({ theme }) => theme.typography.pxToRem(48)};
   line-height: 72px;
 `
 
 export const Description = styled(Typography)`
   font-weight: 400;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.typography.pxToRem(24)};
   line-height: 36px;
 `
 
@@ -65,4 +68,22 @@ export const Button = styled(CustomButton)`
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 8px;
+`
+
+export const BlueBlur = styled(Blue)`
+  position: absolute;
+  z-index: 2;
+  top: -25%;
+  left: 35%;
+`
+export const RedBlur = styled(Red)`
+  position: absolute;
+  z-index: 2;
+  top: -40%;
+  left: -10%;
+`
+export const YellowBlur = styled(Yellow)`
+  position: absolute;
+  z-index: 2;
+  top: 10%;
 `

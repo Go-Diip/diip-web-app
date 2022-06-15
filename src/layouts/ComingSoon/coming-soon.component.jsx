@@ -10,6 +10,9 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined"
 const ComingSoon = () => {
   return (
     <S.Wrapper>
+      <S.BlueBlur />
+      <S.RedBlur />
+      <S.YellowBlur />
       <Container>
         <S.ContentWrapper>
           <DiipLogo />
