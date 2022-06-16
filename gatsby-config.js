@@ -11,7 +11,7 @@ console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.domain.com`,
+    siteUrl: `https://www.godiip.com`,
   },
   flags: {
     // FAST_DEV: true,
