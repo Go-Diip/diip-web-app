@@ -17,9 +17,9 @@ const Layout = ({ seo, children }) => {
   return (
     <>
       {seo && <SEO data={seo} />}
-      <Header />
+      {/*<Header />*/}
       <AppContainer>{children}</AppContainer>
-      <Footer />
+      {/*<Footer />*/}
     </>
   )
 }
