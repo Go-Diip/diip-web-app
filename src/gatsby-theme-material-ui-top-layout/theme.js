@@ -12,13 +12,13 @@ const theme = createTheme({
   palette: {
     primary: {
       // contrastText: "rgba(0, 0, 0, 0.87)",
-      main: "#E65924",
+      main: "rgba(16, 16, 16, 1)",
       light: "#F7FBFF",
       dark: "#1D0902",
     },
     secondary: {
       // contrastText: "rgba(0, 0, 0, 0.87)",
-      main: "#261003",
+      main: "#001EF5",
       light: "#1F1D2F",
       dark: "#1F1D2F",
     },
