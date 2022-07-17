@@ -43,13 +43,21 @@ export const CustomButton = styled(Button)`
     }
   }
 
+  &.blue {
+    border: 1px ${({ theme }) => theme.palette.secondary.main} solid;
+    background-color: ${({ theme }) => theme.palette.secondary.main};
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
   &.lightBorder {
     color: white;
     border: 1px white solid;
     background-color: transparent;
   }
 
-  &:not(.light):not(.darkBorder):not(.transparent):hover {
+  &:not(.light):not(.darkBorder):not(.transparent):not(.blue):hover {
     background-color: ${({ theme, color }) =>
       darken(
         theme.palette[color]
