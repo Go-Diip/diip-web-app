@@ -6,6 +6,7 @@ export const Wrapper = styled(SectionWrapper)`
   backdrop-filter: blur(16px);
   height: 100vh;
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;

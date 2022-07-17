@@ -5,6 +5,7 @@ import { LayoutTitle } from "../styles/app.styles"
 import CustomButton from "../components/custom-button/custom-button.component"
 import ComingSoon from "../layouts/ComingSoon"
 import HomeHero from "../layouts/HomeHero"
+import InfoRow from "../layouts/InfoRow"
 
 const Layouts = () => {
   return (
@@ -20,7 +21,11 @@ const Layouts = () => {
       {/*<LayoutTitle>Coming Soon</LayoutTitle>*/}
       {/*<ComingSoon />*/}
       {/*<LayoutTitle>HomeHero</LayoutTitle>*/}
-      <HomeHero />
+      <HomeHero title="The next step for your company." />
+      <InfoRow
+        title="Welcome to diip"
+        description="We help you elevate your brand, grow revenue, and use technology to reduce business costs by building customized digital products for your company."
+      />
     </Layout>
   )
 }
