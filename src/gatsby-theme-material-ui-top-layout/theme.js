@@ -4,7 +4,7 @@ const theme = createTheme({
   navHeight: 100,
   sectionPadding: "padding-top: 1.5em; padding-bottom: 1.5em;",
   fonts: {
-    primary: "Poppins",
+    primary: "Avenir Next",
   },
   layout: {
     contentWidth: 1236,
@@ -40,7 +40,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `"Poppins", "Open Sans", "Arial", sans-serif`,
+    fontFamily: `"Avenir Next", "Open Sans", "Arial", sans-serif`,
   },
 })
 

@@ -165,6 +165,37 @@ const wordpress = css`
 `
 
 export const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-Regular.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-BoldCn.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-Demi.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-DemiCn.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-It.otf") format("opentype");
+    font-display: swap;
+  }
+  
+  
   img, svg {
     max-width: 100%;
   }
