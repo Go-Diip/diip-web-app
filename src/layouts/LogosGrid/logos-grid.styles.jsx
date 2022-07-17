@@ -11,9 +11,9 @@ export const Wrapper = styled(SectionWrapper)`
 export const Title = styled.h2`
   margin-bottom: 4rem;
   ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 500;
-    font-size: ${({ theme }) => theme.typography.pxToRem(24)};
-    line-height: 32px;
+    font-weight: 600;
+    font-size: ${({ theme }) => theme.typography.pxToRem(40)};
+    line-height: 48px;
   }
 `
 

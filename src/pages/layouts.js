@@ -9,6 +9,7 @@ import ComingSoon from "../layouts/ComingSoon"
 import HomeHero from "../layouts/HomeHero"
 import InfoRow from "../layouts/InfoRow"
 import LogosGrid from "../layouts/LogosGrid"
+import NextStepBanner from "../layouts/NextStepBanner"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -49,6 +50,8 @@ const Layouts = () => {
           { logo: staticQuery.logo },
         ]}
       />
+      {/*<LayoutTitle>NextStepBanner</LayoutTitle>*/}
+      <NextStepBanner />
     </Layout>
   )
 }

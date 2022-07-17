@@ -13,11 +13,11 @@ export const CustomButton = styled(Button)`
   border: 1px solid transparent;
   font-size: ${({ theme }) => theme.typography.pxToRem(14)};
   font-weight: 600 !important;
-  border-radius: 4px;
+  border-radius: 50px;
 
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    padding: 0.5em 3em;
-  }
+  // ${({ theme }) => theme.breakpoints.up("md")} {
+  //   padding: 0.5em 1.5em;
+  // }
   &.light {
     background-color: white;
     color: ${({ theme }) => theme.palette.primary.main};
@@ -34,13 +34,22 @@ export const CustomButton = styled(Button)`
     }
   }
 
+  &.transparent {
+    border: 1px ${({ theme }) => theme.palette.secondary.main} solid;
+    background-color: transparent;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.palette.secondary.main};
+    }
+  }
+
   &.lightBorder {
     color: white;
     border: 1px white solid;
     background-color: transparent;
   }
 
-  &:not(.light):not(.darkBorder):hover {
+  &:not(.light):not(.darkBorder):not(.transparent):hover {
     background-color: ${({ theme, color }) =>
       darken(
         theme.palette[color]
