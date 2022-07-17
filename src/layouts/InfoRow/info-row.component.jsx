@@ -5,7 +5,7 @@ import { Container } from "@mui/material"
 const InfoRow = ({ title, description }) => {
   return (
     <S.Wrapper>
-      <Container>
+      <Container maxWidth="md">
         <S.TextWrapper>
           {title && <S.Title>{title}</S.Title>}
           {description && <S.Description>{description}</S.Description>}
