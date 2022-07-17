@@ -8,8 +8,10 @@ const HomeHero = () => {
     <S.Wrapper>
       <Container>
         <S.Title>The next step for your company.</S.Title>
-        <ScrollTo />
       </Container>
+      <S.ScrollWrapper>
+        <ScrollTo />
+      </S.ScrollWrapper>
     </S.Wrapper>
   )
 }
