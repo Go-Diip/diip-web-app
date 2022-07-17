@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { AppBar, Container } from "@mui/material"
+import CustomLink from "../custom-link/custom-link.component"
 
 export const Navbar = styled(AppBar)`
   background-color: ${({ theme }) => theme.palette.primary.main};
@@ -19,4 +20,9 @@ export const Wrapper = styled.div`
 export const CustomContainer = styled(Container)`
   height: 100%;
   width: 100%;
+`
+
+export const Link = styled(CustomLink)`
+  display: flex;
+  align-items: center;
 `

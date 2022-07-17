@@ -10,9 +10,9 @@ const Header = () => {
     <S.Navbar elevation={0}>
       <S.CustomContainer maxWidth="xl">
         <S.Wrapper>
-          <CustomLink url="/">
+          <S.Link url="/">
             <Logo />
-          </CustomLink>
+          </S.Link>
           <CustomButton className="blue">Contact Us</CustomButton>
         </S.Wrapper>
       </S.CustomContainer>
