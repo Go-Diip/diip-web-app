@@ -166,7 +166,7 @@ const wordpress = css`
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
-    font-family: "Avenir Next";
+    font-family: "Avenir Next Regular";
     src: url("/fonts/AvenirNext/AvenirNextLTPro-Regular.otf") format("opentype");
     font-display: swap;
   }
