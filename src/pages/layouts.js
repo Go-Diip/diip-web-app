@@ -10,6 +10,7 @@ import HomeHero from "../layouts/HomeHero"
 import InfoRow from "../layouts/InfoRow"
 import LogosGrid from "../layouts/LogosGrid"
 import NextStepBanner from "../layouts/NextStepBanner"
+import StatsGrid from "../layouts/StatsGrid"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -40,6 +41,8 @@ const Layouts = () => {
         title="Welcome to diip"
         description="We help you elevate your brand, grow revenue, and use technology to reduce business costs by building customized digital products for your company."
       />
+      {/*<LayoutTitle>StatsGrid</LayoutTitle>*/}
+      <StatsGrid title="Why Your Business Needs Online Presence" />
       {/*<LayoutTitle>LogosGrid</LayoutTitle>*/}
       <LogosGrid
         title="Trusted by"
