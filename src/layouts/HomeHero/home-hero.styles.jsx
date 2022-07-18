@@ -18,8 +18,8 @@ export const Title = styled.h1`
   margin: auto;
   ${({ theme }) => theme.breakpoints.up("md")} {
     font-weight: 600;
-    font-size: ${({ theme }) => theme.typography.pxToRem(64)};
-    line-height: 64px;
+    font-size: ${({ theme }) => theme.typography.pxToRem(104)};
+    line-height: 104px;
   }
 `
 

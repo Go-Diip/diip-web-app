@@ -11,6 +11,7 @@ import InfoRow from "../layouts/InfoRow"
 import LogosGrid from "../layouts/LogosGrid"
 import NextStepBanner from "../layouts/NextStepBanner"
 import StatsGrid from "../layouts/StatsGrid"
+import ServicesSlider from "../layouts/ServicesSlider"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -55,6 +56,11 @@ const Layouts = () => {
       />
       {/*<LayoutTitle>NextStepBanner</LayoutTitle>*/}
       <NextStepBanner />
+      {/*<LayoutTitle>ServicesSlider</LayoutTitle>*/}
+      <ServicesSlider
+        title="We make it happen for you:"
+        description="Data science, machine learning, and artificial intelligence are the key technologies of the future. In addition to extensive opportunities for companies to develop new."
+      />
     </Layout>
   )
 }
