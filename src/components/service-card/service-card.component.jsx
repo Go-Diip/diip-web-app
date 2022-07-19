@@ -10,7 +10,10 @@ const ServiceCard = ({ image, title, description }) => {
           <S.Image img={image} />
         </Grid>
         <Grid item xs={12} md={8}>
-          <S.TextWrapper></S.TextWrapper>
+          <S.TextWrapper>
+            {title && <S.Title>{title}</S.Title>}
+            {description && <S.Description>{description}</S.Description>}
+          </S.TextWrapper>
         </Grid>
       </Grid>
     </S.Wrapper>

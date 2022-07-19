@@ -12,6 +12,7 @@ import LogosGrid from "../layouts/LogosGrid"
 import NextStepBanner from "../layouts/NextStepBanner"
 import StatsGrid from "../layouts/StatsGrid"
 import ServicesSlider from "../layouts/ServicesSlider"
+import ContactSection from "../layouts/ContactSection"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -85,6 +86,10 @@ const Layouts = () => {
               "Data science, machine learning, and artificial intelligence are the key technologies of the future.",
           },
         ]}
+      />
+      <ContactSection
+        title="Let’s to take the next step"
+        description="Let's start filling the following form and send us a message or if you prefer a schedule a meeting you can request it"
       />
     </Layout>
   )

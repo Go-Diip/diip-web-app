@@ -43,3 +43,47 @@ export const Description = styled(Typography)`
 export const TextWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.typography.pxToRem(64)};
 `
+
+export const ArrowGrid = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .next {
+    margin-left: 1.75rem;
+  }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    display: none;
+  }
+`
+
+export const IndicatorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`
+
+export const Number = styled.span``
+
+export const LineWrapper = styled.div`
+  position: relative;
+  height: 2px;
+  width: 290px;
+  background-color: rgba(255, 255, 255, 0.24);
+`
+
+export const NavigationWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 48px 0;
+  gap: ${({ theme }) => theme.typography.pxToRem(40)};
+`
+
+export const WhiteLine = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s all ease;
+`
