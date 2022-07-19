@@ -51,6 +51,12 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_HomeHero {
             ...HomeHero
           }
+          ... on WpPage_Pagebuilder_Layouts_ServicesSlider {
+            ...ServicesSlider
+          }
+          ... on WpPage_Pagebuilder_Layouts_InfoRow {
+            ...InfoRow
+          }
         }
         pageConfiguration {
           hideFooter
