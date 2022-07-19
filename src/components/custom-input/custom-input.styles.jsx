@@ -39,13 +39,18 @@ export const Wrapper = styled(TextField)`
   }
 
   .MuiInput-underline:after {
-    border-bottom-color: white;
+    border-bottom-color: ${({ theme }) => theme.palette.secondary.main};
   }
 
   .MuiInput-underline:before {
     border-bottom: 1px solid rgba(255, 255, 255, 0.42);
   }
+
   .MuiFormHelperText-root {
-    color: red;
+    color: #d32f2f;
+  }
+
+  .Mui-error:after {
+    border-bottom-color: #d32f2f;
   }
 `
