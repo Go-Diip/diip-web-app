@@ -20,9 +20,3 @@ export const Wrapper = styled(SectionWrapper)`
     position: relative;
   }
 `
-
-export const SlideWrapper = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: red;
-`

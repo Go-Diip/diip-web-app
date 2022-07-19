@@ -3,7 +3,7 @@ import { AppBar, Container } from "@mui/material"
 import CustomLink from "../custom-link/custom-link.component"
 
 export const Navbar = styled(AppBar)`
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: rgba(16, 16, 16, 0.8);
   height: ${({ theme }) => theme.navHeight}px;
   //z-index: 4;
   //color: white;
