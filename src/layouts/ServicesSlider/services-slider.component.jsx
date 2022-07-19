@@ -8,15 +8,22 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
 import { Container } from "@mui/material"
+import ServiceCard from "../../components/service-card/service-card.component"
 
 const ServicesSlider = ({ title, description, slides }) => {
   return (
     <S.Wrapper>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
+        <S.TextWrapper>
+          {title && <S.Title>{title}</S.Title>}
+          {description && <S.Description>{description}</S.Description>}
+        </S.TextWrapper>
+      </Container>
+      <Container>
         <Swiper
           modules={[Navigation, Pagination]}
           //pagination={{ clickable: true }}
-          spaceBetween={15}
+          spaceBetween={48}
           // loop={isSm}
           navigation={{
             prevEl: ".prev",
@@ -24,15 +31,11 @@ const ServicesSlider = ({ title, description, slides }) => {
           }}
           slidesPerView={1}
         >
-          <SwiperSlide>
-            <S.SlideWrapper></S.SlideWrapper>
-          </SwiperSlide>
-          <SwiperSlide>
-            <S.SlideWrapper></S.SlideWrapper>
-          </SwiperSlide>
-          <SwiperSlide>
-            <S.SlideWrapper></S.SlideWrapper>
-          </SwiperSlide>
+          {slides.map((slide, index) => (
+            <SwiperSlide key={`service-card-${index}`}>
+              <ServiceCard {...slide} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Container>
     </S.Wrapper>

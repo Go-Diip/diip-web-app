@@ -19,7 +19,7 @@ module.exports = {
     // FAST_REFRESH: true,
   },
   plugins: [
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-gatsby-cloud`,
     // Make sure this plugin is first in the array of plugins

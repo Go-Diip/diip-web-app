@@ -22,6 +22,11 @@ const Layouts = () => {
           gatsbyImageData(layout: FULL_WIDTH, quality: 100)
         }
       }
+      card: file(relativePath: { eq: "card.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+        }
+      }
     }
   `)
   return (
@@ -61,6 +66,26 @@ const Layouts = () => {
       <ServicesSlider
         title="We make it happen for you:"
         description="Data science, machine learning, and artificial intelligence are the key technologies of the future. In addition to extensive opportunities for companies to develop new."
+        slides={[
+          {
+            image: staticQuery.card,
+            title: "E-commerce Stores",
+            description:
+              "Data science, machine learning, and artificial intelligence are the key technologies of the future.",
+          },
+          {
+            image: staticQuery.card,
+            title: "E-commerce Stores",
+            description:
+              "Data science, machine learning, and artificial intelligence are the key technologies of the future.",
+          },
+          {
+            image: staticQuery.card,
+            title: "E-commerce Stores",
+            description:
+              "Data science, machine learning, and artificial intelligence are the key technologies of the future.",
+          },
+        ]}
       />
       <ContactSection
         title="Let’s to take the next step"
