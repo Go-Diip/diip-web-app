@@ -8,7 +8,7 @@ export const Wrapper = styled(SectionWrapper)`
   position: relative;
   z-index: 1;
   color: white;
-  padding: 6rem 0;
+  padding: 9rem 0 6rem 0;
 `
 
 export const Title = styled.h2`
