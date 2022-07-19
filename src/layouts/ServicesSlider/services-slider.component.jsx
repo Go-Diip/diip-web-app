@@ -13,7 +13,13 @@ import ServiceCard from "../../components/service-card/service-card.component"
 const ServicesSlider = ({ title, description, slides }) => {
   return (
     <S.Wrapper>
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
+        <S.TextWrapper>
+          {title && <S.Title>{title}</S.Title>}
+          {description && <S.Description>{description}</S.Description>}
+        </S.TextWrapper>
+      </Container>
+      <Container>
         <Swiper
           modules={[Navigation, Pagination]}
           //pagination={{ clickable: true }}
