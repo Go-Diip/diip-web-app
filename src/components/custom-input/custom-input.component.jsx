@@ -8,13 +8,13 @@ const CustomInput = props => {
     className,
     errors,
     customError,
-    isRequired,
     rows,
     register,
     rowsMax,
     label,
     type = "text",
     variant = "standard",
+    validations,
   } = props
 
   const getError = () => {
@@ -22,7 +22,20 @@ const CustomInput = props => {
       if (customError) {
         return customError
       }
-      return "This is a required field"
+      switch (errors[name].type) {
+        case "required":
+          return "This field is required"
+        case "maxLength":
+          return `The min lenght is ${validations.maxLength}`
+        case "minLength":
+          return `The min lenght is ${validations.minLength}`
+        case "pattern":
+          return `The ${name} is invalid`
+        case "validate":
+          return errors[name].message
+        default:
+          return ""
+      }
     }
   }
 
@@ -35,13 +48,12 @@ const CustomInput = props => {
         variant={variant}
         rows={rows}
         rowsMax={rowsMax}
-        required={!!isRequired}
         className={className}
         color="secondary"
         label={label}
         type={type}
         helperText={getError()}
-        {...register(name, { required: isRequired })}
+        {...register(name, validations)}
         {...props}
       />
     </>

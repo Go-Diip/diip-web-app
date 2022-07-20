@@ -48,9 +48,14 @@ export const Wrapper = styled(TextField)`
 
   .MuiFormHelperText-root {
     color: #d32f2f;
+    position: absolute;
+    bottom: -25px;
   }
 
   .Mui-error:after {
     border-bottom-color: #d32f2f;
+  }
+  .MuiSelect-select {
+    color: ${({ valueDisabled }) => valueDisabled};
   }
 `
