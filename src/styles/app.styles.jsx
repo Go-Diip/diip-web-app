@@ -223,6 +223,10 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     flex-direction: column;
   }
+
+  .MuiDrawer-paper{
+    border-radius: 16px 16px 0px 0px;
+  }
   
   ${wordpress}
   ${snipcart}

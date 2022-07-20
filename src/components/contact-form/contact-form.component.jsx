@@ -27,6 +27,9 @@ const ContactForm = () => {
 
   const [open, setOpen] = React.useState(false)
 
+  const handleOpen = () => {
+    setOpen(true)
+  }
   const handleClose = () => {
     setOpen(false)
   }
@@ -150,6 +153,7 @@ const ContactForm = () => {
       <SuccessModal
         open={open}
         handleClose={handleClose}
+        handleOpen={handleOpen}
         successMessage={successMessage}
       />
     </>

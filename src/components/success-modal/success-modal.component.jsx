@@ -1,21 +1,39 @@
 import React from "react"
-import { Dialog, DialogContent } from "@mui/material"
 import CustomButton from "../custom-button/custom-button.component"
 import * as S from "./success-modal.styles"
-import { SuccessIcon } from "./success-modal.styles"
 
-const SuccessModal = ({ successMessage, open, handleClose }) => {
+const SuccessModal = ({ successMessage, open, handleClose, handleOpen }) => {
   return (
-    <Dialog open={open} onClose={handleClose}>
-      <S.CustomDialogContent>
-        <S.SuccessIcon />
-        <S.Title>Message sent successfully</S.Title>
-        <S.Description>{successMessage}</S.Description>
-        <CustomButton onClick={handleClose} fullWidth>
-          SEND A NEW MESSAGE
-        </CustomButton>
-      </S.CustomDialogContent>
-    </Dialog>
+    <>
+      <S.CustomDialog open={open} onClose={handleClose}>
+        <S.CustomDialogContent>
+          <S.SuccessIcon />
+          <S.Title>Message sent successfully</S.Title>
+          <S.Description>{successMessage}</S.Description>
+          <CustomButton onClick={handleClose} fullWidth>
+            SEND A NEW MESSAGE
+          </CustomButton>
+        </S.CustomDialogContent>
+      </S.CustomDialog>
+
+      <S.CustomSwipeableDrawer
+        open={open}
+        anchor={"bottom"}
+        onClose={handleClose}
+        onOpen={handleOpen}
+      >
+        <S.CustomDrawerBody>
+          <S.DrawerContainer>
+            <S.SuccessIcon />
+            <S.Title>Message sent successfully</S.Title>
+            <S.Description>{successMessage}</S.Description>
+            <CustomButton onClick={handleClose} fullWidth>
+              SEND A NEW MESSAGE
+            </CustomButton>
+          </S.DrawerContainer>
+        </S.CustomDrawerBody>
+      </S.CustomSwipeableDrawer>
+    </>
   )
 }
 
