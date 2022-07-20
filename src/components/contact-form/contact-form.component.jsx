@@ -56,6 +56,8 @@ const ContactForm = () => {
           if (response.data.status === "mail_sent") {
             setOpen(true)
             setSuccessMessage(response.data.message)
+            setAceptedPrivacy(false)
+            setInterest(" ")
             reset()
           } else {
             console.log(response.data)
@@ -105,8 +107,10 @@ const ContactForm = () => {
             Select an option
           </MenuItem>
           <MenuItem value="E-commerce">E-commerce</MenuItem>
-          <MenuItem value="E-commerce">E-commerce</MenuItem>
-          <MenuItem value="E-commerce">E-commerce</MenuItem>
+          <MenuItem value="Software">Software</MenuItem>
+          <MenuItem value="Website">Website</MenuItem>
+          <MenuItem value="Partnership">Partnership</MenuItem>
+          <MenuItem value="Other">Other</MenuItem>
         </CustomInput>
 
         <CustomInput
