@@ -13,7 +13,6 @@ export const FormWrapper = styled.form`
 
 export const CustomFormControlLabel = styled(FormControlLabel)`
   margin-bottom: 2em;
-  display: block;
 
   .MuiTypography-root,
   .MuiCheckbox-root {

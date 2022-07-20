@@ -243,5 +243,5 @@ export const AppContainer = styled.main`
   flex-direction: column;
   padding-top: ${({ theme }) => theme.navHeight}px;
   margin-top: -${({ theme }) => theme.navHeight}px;
-  background-color: #f8fdff;
+  background-color: ${({ theme }) => theme.palette.primary.main};
 `
