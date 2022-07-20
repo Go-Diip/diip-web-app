@@ -57,6 +57,9 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_InfoRow {
             ...InfoRow
           }
+          ... on WpPage_Pagebuilder_Layouts_ContactSection {
+            ...ContactSection
+          }
         }
         pageConfiguration {
           hideFooter
