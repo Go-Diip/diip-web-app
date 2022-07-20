@@ -1,16 +1,16 @@
 import React from "react"
 import { Grid } from "@mui/material"
+import ContactForm from "../../components/contact-form/contact-form.component"
 
 import * as S from "./contact-section.styles.jsx"
-import ContactForm from "../../components/contact-form/contact-form.component"
 
 const ContactSection = ({ title, description }) => {
   return (
     <S.Wrapper contained maxWidth="md">
       <Grid container spacing={8}>
         <Grid item xs={12} md={6}>
-          <S.Title>{title}</S.Title>
-          <S.Description>{description}</S.Description>
+          {title && <S.Title>{title}</S.Title>}
+          {description && <S.Description>{description}</S.Description>}
         </Grid>
         <Grid item xs={12} md={6}>
           <ContactForm />

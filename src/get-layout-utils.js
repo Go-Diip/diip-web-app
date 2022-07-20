@@ -3,6 +3,7 @@ import MiscContent from "./layouts/MiscContent"
 import HomeHero from "./layouts/HomeHero"
 import InfoRow from "./layouts/InfoRow"
 import ServicesSlider from "./layouts/ServicesSlider"
+import ContactSection from "./layouts/ContactSection"
 
 export const getPageLayout = layout => {
   const layoutName = layout?.fieldGroupName?.split("_").pop().trim()
@@ -16,5 +17,7 @@ export const getPageLayout = layout => {
       return <ServicesSlider {...layout} />
     case "InfoRow":
       return <InfoRow {...layout} />
+    case "ContactSection":
+      return <ContactSection {...layout} />
   }
 }
