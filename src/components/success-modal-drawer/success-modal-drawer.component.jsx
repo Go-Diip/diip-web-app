@@ -1,6 +1,6 @@
 import React from "react"
 import CustomButton from "../custom-button/custom-button.component"
-import * as S from "./success-modal.styles"
+import * as S from "./success-modal-drawer.styles"
 
 const SuccessModal = ({ successMessage, open, handleClose, handleOpen }) => {
   return (

@@ -1,13 +1,15 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import CustomInput from "../custom-input/custom-input.component"
-import { Checkbox, FormGroup, MenuItem } from "@mui/material"
+import { Checkbox, FormGroup, InputAdornment, MenuItem } from "@mui/material"
 import { RadioButtonChecked, RadioButtonUnchecked } from "@mui/icons-material"
 import { emailRegexExpression, isBrowser } from "../../utils"
-import SuccessModal from "../success-modal/success-modal.component"
+import SuccessModal from "../success-modal-drawer/success-modal-drawer.component"
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"
+import { contactFormApi } from "../../apis/apis"
+import CustomDrawerSelect from "../custom-drawer-select/custom-drawer-select.component"
 
 import * as S from "./contact-form.styles"
-import { contactFormApi } from "../../apis/apis"
 
 const ContactForm = () => {
   const {
@@ -19,6 +21,15 @@ const ContactForm = () => {
     mode: "onBlur",
     reValidateMode: "onBlur",
   })
+
+  const selectItems = [
+    "E-commerce",
+    "Software",
+    "Website",
+    "Partnership",
+    "Other",
+  ]
+
   const [successMessage, setSuccessMessage] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
@@ -26,12 +37,20 @@ const ContactForm = () => {
   const [interest, setInterest] = useState(" ")
 
   const [open, setOpen] = React.useState(false)
+  const [openSelect, setOpenSelect] = React.useState(false)
 
   const handleOpen = () => {
     setOpen(true)
   }
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const handleOpenSelect = () => {
+    setOpenSelect(true)
+  }
+  const handleCloseSelect = () => {
+    setOpenSelect(false)
   }
 
   const onSubmit = async data => {
@@ -91,6 +110,7 @@ const ContactForm = () => {
           validations={{ required: true, pattern: emailRegexExpression }}
         />
         <CustomInput
+          id="outlined-select-currency"
           register={register}
           label="What are you interested in?"
           errors={errors}
@@ -102,16 +122,37 @@ const ContactForm = () => {
             interest === " " ? "rgba(255, 255, 255, 0.32);" : "#FFFFFF"
           }
           validations={{ required: true }}
+          className="select-box"
         >
           <MenuItem value=" " selected disabled>
             Select an option
           </MenuItem>
-          <MenuItem value="E-commerce">E-commerce</MenuItem>
-          <MenuItem value="Software">Software</MenuItem>
-          <MenuItem value="Website">Website</MenuItem>
-          <MenuItem value="Partnership">Partnership</MenuItem>
-          <MenuItem value="Other">Other</MenuItem>
+          {selectItems.map((item, index) => (
+            <MenuItem value={item} key={`interest-${index}`}>
+              {item}
+            </MenuItem>
+          ))}
         </CustomInput>
+
+        <CustomInput
+          register={register}
+          label="What are you interested in?"
+          errors={errors}
+          name="interestedin"
+          value={interest}
+          validations={{ required: true }}
+          className={
+            openSelect ? "text-field-select rotate" : "text-field-select"
+          }
+          onClick={handleOpenSelect}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <ArrowDropDownIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
 
         <CustomInput
           register={register}
@@ -154,6 +195,14 @@ const ContactForm = () => {
           SEND
         </S.SubmitCustomButton>
       </S.FormWrapper>
+      <CustomDrawerSelect
+        open={openSelect}
+        handleClose={handleCloseSelect}
+        handleOpen={handleOpenSelect}
+        items={selectItems}
+        itemSelected={interest}
+        setSelected={setInterest}
+      />
       <SuccessModal
         open={open}
         handleClose={handleClose}

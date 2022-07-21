@@ -5,7 +5,7 @@ import { CheckCircle } from "@mui/icons-material"
 export const CustomDialog = styled(Dialog)`
   display: none;
 
-  @media (min-width: 375px) {
+  @media (min-width: 440px) {
     display: block;
   }
 `
@@ -13,7 +13,7 @@ export const CustomDialog = styled(Dialog)`
 export const CustomSwipeableDrawer = styled(SwipeableDrawer)`
   display: none;
   border-radius: 16px 16px 0px 0px;
-  @media (max-width: 375px) {
+  @media (max-width: 440px) {
     display: block;
   }
 `

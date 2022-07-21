@@ -9,6 +9,33 @@ export const FormWrapper = styled.form`
   .last-child {
     margin-bottom: 2.2rem !important;
   }
+
+  .MuiSvgIcon-root {
+    color: white;
+    transition: 0.4s ease all;
+  }
+
+  .select-box {
+    display: none;
+  }
+  .text-field-select {
+    display: block;
+    &.rotate {
+      .MuiInputAdornment-root {
+        transition: 0.3s ease all;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @media (min-width: 440px) {
+    .select-box {
+      display: block;
+    }
+    .text-field-select {
+      display: none;
+    }
+  }
 `
 
 export const CustomFormControlLabel = styled(FormControlLabel)`
