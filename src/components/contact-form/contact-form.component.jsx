@@ -34,7 +34,7 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
   const [aceptedPrivacy, setAceptedPrivacy] = useState(false)
-  const [interest, setInterest] = useState(" ")
+  const [interest, setInterest] = useState("")
 
   const [open, setOpen] = React.useState(false)
   const [openSelect, setOpenSelect] = React.useState(false)
@@ -76,7 +76,7 @@ const ContactForm = () => {
             setOpen(true)
             setSuccessMessage(response.data.message)
             setAceptedPrivacy(false)
-            setInterest(" ")
+            setInterest("")
             reset()
           } else {
             console.log(response.data)
@@ -119,7 +119,7 @@ const ContactForm = () => {
           onChange={event => setInterest(event.target.value)}
           select
           valueDisabled={
-            interest === " " ? "rgba(255, 255, 255, 0.32);" : "#FFFFFF"
+            interest === "" ? "rgba(255, 255, 255, 0.32);" : "#FFFFFF"
           }
           validations={{ required: true }}
           className="select-box"
