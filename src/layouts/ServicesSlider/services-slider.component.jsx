@@ -2,9 +2,8 @@ import React, { useState } from "react"
 import * as S from "./services-slider.styles"
 
 import { Navigation, Pagination } from "swiper"
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react"
 
-// Import Swiper styles
 import "swiper/css"
 import "swiper/css/navigation"
 import { Container } from "@mui/material"
@@ -13,6 +12,7 @@ import SliderArrow from "../../components/slider-arrow/slider-arrow.component"
 
 const ServicesSlider = ({ title, description, slides }) => {
   const [slideIndex, setSlideIndex] = useState(0)
+
   const handleChangeSlide = value => {
     setSlideIndex(value)
   }
@@ -27,6 +27,7 @@ const ServicesSlider = ({ title, description, slides }) => {
       </Container>
       <Container>
         <Swiper
+          allowTouchMove={false}
           modules={[Navigation, Pagination]}
           //pagination={{ clickable: true }}
           spaceBetween={48}
