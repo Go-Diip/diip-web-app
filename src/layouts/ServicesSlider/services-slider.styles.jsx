@@ -25,16 +25,21 @@ export const Wrapper = styled(SectionWrapper)`
 
 export const Title = styled.h2`
   margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.typography.pxToRem(28)};
+  line-height: 36px;
   ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 600;
     font-size: ${({ theme }) => theme.typography.pxToRem(40)};
     line-height: 48px;
   }
 `
 
 export const Description = styled(Typography)`
+  font-size: ${({ theme }) => theme.typography.pxToRem(16)};
+  line-height: 24px;
+  font-weight: 400;
+
   ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 400;
     font-size: ${({ theme }) => theme.typography.pxToRem(24)};
     line-height: 32px;
   }

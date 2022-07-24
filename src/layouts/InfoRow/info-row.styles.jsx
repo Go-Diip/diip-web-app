@@ -12,19 +12,19 @@ export const Wrapper = styled(SectionWrapper)`
 `
 
 export const Title = styled.h2`
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 500;
+  font-weight: 500;
+  font-size: ${({ theme }) => theme.typography.pxToRem(16)};
+  line-height: 24px;
+  ${({ theme }) => theme.breakpoints.up("sm")} {
     font-size: ${({ theme }) => theme.typography.pxToRem(24)};
     line-height: 32px;
   }
 `
 
 export const Description = styled(Typography)`
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.typography.pxToRem(28)};
-    line-height: 36px;
-  }
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.typography.pxToRem(28)};
+  line-height: 36px;
 `
 
 export const TextWrapper = styled.div`

@@ -36,11 +36,9 @@ export const InfoWrapper = styled.div`
 `
 
 export const Value = styled.span`
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.typography.pxToRem(64)};
-    line-height: 72px;
-  }
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.typography.pxToRem(64)};
+  line-height: 72px;
   &.right {
     text-align: right;
   }
@@ -56,6 +54,7 @@ export const Description = styled(Typography)`
   font-weight: 500;
   font-size: ${({ theme }) => theme.typography.pxToRem(16)};
   line-height: 24px;
+  margin-bottom: 8px;
   &.small {
     font-size: ${({ theme }) => theme.typography.pxToRem(12)};
   }

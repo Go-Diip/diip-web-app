@@ -45,8 +45,13 @@ export const Link = styled.a`
   }
 `
 
-export const Description = styled.span`
+export const Description = styled.p`
+  margin: 0;
   font-weight: 400;
   font-size: ${({ theme }) => theme.typography.pxToRem(14)};
   line-height: 20px;
+  text-align: center;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    text-align: left;
+  }
 `

@@ -8,7 +8,7 @@ const LogosGrid = ({ title, logos }) => {
     <S.Wrapper>
       <Container maxWidth="md">
         {title && <S.Title>{title}</S.Title>}
-        <Grid container>
+        <Grid container spacing={{ xs: 4, md: 0 }}>
           {logos.map(({ logo }, index) => (
             <Grid item xs={6} md={3} key={`logo-${index}`}>
               <S.ImageWrapper>

@@ -13,11 +13,13 @@ export const Wrapper = styled(SectionWrapper)`
 `
 
 export const Title = styled.h1`
+  font-size: ${({ theme }) => theme.typography.pxToRem(64)};
+  line-height: 64px;
+  font-weight: 600;
   color: ${({ theme }) => theme.palette.text.light};
   max-width: 504px;
   margin: auto;
   ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 600;
     font-size: ${({ theme }) => theme.typography.pxToRem(104)};
     line-height: 104px;
   }

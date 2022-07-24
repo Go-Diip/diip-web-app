@@ -9,7 +9,10 @@ export const Wrapper = styled.div`
 `
 
 export const TextWrapper = styled.div`
-  padding: 56px 48px;
+  padding: 32px 24px;
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    padding: 56px 48px;
+  }
 `
 
 export const Image = styled(CustomImage)`
@@ -23,9 +26,13 @@ export const Image = styled(CustomImage)`
 `
 
 export const Title = styled.h2`
-  margin-bottom: ${({ theme }) => theme.typography.pxToRem(56)};
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    font-weight: 600;
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.typography.pxToRem(24)};
+  line-height: 32px;
+  margin-bottom: 8px;
+
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    margin-bottom: ${({ theme }) => theme.typography.pxToRem(56)};
     font-size: ${({ theme }) => theme.typography.pxToRem(40)};
     line-height: 48px;
   }
