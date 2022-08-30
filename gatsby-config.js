@@ -11,7 +11,7 @@ console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.domain.com`,
+    siteUrl: `https://www.godiip.com`,
   },
   flags: {
     // FAST_DEV: true,
@@ -35,8 +35,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.domain.com",
-        sitemap: "https://www.domain.com/sitemap.xml",
+        host: "https://www.godiip.com",
+        sitemap: "https://www.godiip.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -90,16 +90,16 @@ module.exports = {
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from WordPress.
      */
-    // {
-    //   resolve: `gatsby-source-wordpress`,
-    //   options: {
-    //     /*
-    //      * The full URL of the WordPress site's GraphQL API.
-    //      * Example : 'https://www.example-site.com/graphql'
-    //      */
-    //     url: `${process.env.WORDPRESS_URL}/graphql`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        /*
+         * The full URL of the WordPress site's GraphQL API.
+         * Example : 'https://www.example-site.com/graphql'
+         */
+        url: `${process.env.WORDPRESS_URL}/graphql`,
+      },
+    },
 
     {
       resolve: "gatsby-plugin-react-svg",
