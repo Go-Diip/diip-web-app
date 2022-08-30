@@ -15,7 +15,7 @@ const Footer = ({ className }) => {
             </Grid>
             <Grid item xs={12} md={6}>
               <S.Title>Email</S.Title>
-              <S.Link>hello@godiip.com</S.Link>
+              <S.Link href="mailto:hello@godiip.com">hello@godiip.com</S.Link>
             </Grid>
           </Grid>
         </Container>

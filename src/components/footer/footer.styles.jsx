@@ -35,13 +35,31 @@ export const Title = styled.h2`
 export const Link = styled.a`
   text-decoration: none;
   transition: 0.3s all ease;
+  color: white;
+  position: relative;
   ${({ theme }) => theme.breakpoints.up("md")} {
     font-weight: 500;
     font-size: ${({ theme }) => theme.typography.pxToRem(24)};
     line-height: 32px;
   }
-  &:hover {
-    color: ${({ theme }) => theme.palette.secondary.main};
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: white;
+    bottom: -4px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover:before {
+    transform-origin: left;
+    transform: scaleX(1);
   }
 `
 
