@@ -89,13 +89,20 @@ export const BlueWrapper = styled.div`
 export const RedWrapper = styled.div`
   position: absolute;
   z-index: 2;
-  top: -40%;
-  left: -10%;
+  top: -30%;
+  left: 6%;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    top: -40%;
+    left: 6%;
+  }
 `
 export const YellowWrapper = styled.div`
   position: absolute;
   z-index: 2;
-  top: 10%;
+  top: 0;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    top: 10%;
+  }
 `
 
 export const CustomContainer = styled(Container)`

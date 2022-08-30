@@ -165,6 +165,37 @@ const wordpress = css`
 `
 
 export const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: "Avenir Next Regular";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-Regular.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-BoldCn.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-Demi.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-DemiCn.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Avenir Next";
+    src: url("/fonts/AvenirNext/AvenirNextLTPro-It.otf") format("opentype");
+    font-display: swap;
+  }
+  
+  
   img, svg {
     max-width: 100%;
   }
@@ -192,6 +223,10 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     flex-direction: column;
   }
+
+  .MuiDrawer-paper{
+    border-radius: 16px 16px 0px 0px;
+  }
   
   ${wordpress}
   ${snipcart}
@@ -211,5 +246,6 @@ export const AppContainer = styled.main`
   flex: 1;
   flex-direction: column;
   padding-top: ${({ theme }) => theme.navHeight}px;
-  background-color: #f8fdff;
+  margin-top: -${({ theme }) => theme.navHeight}px;
+  background-color: ${({ theme }) => theme.palette.primary.main};
 `

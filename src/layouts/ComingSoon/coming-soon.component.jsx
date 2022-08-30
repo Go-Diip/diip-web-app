@@ -7,9 +7,9 @@ import * as S from "./coming-soon.styles"
 import DiipLogo from "../../assets/diip.svg"
 import PoweredByLogo from "../../assets/powered-by.svg"
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined"
-import Blue from "../../assets/blue.svg"
-import Red from "../../assets/red.svg"
-import Yellow from "../../assets/yellow.svg"
+import Blue from "../../assets/blob-02.svg"
+import Red from "../../assets/blob-01.svg"
+import Yellow from "../../assets/blob-03.svg"
 
 const ComingSoon = () => {
   const blueBlurRef = useRef(null)
@@ -25,13 +25,12 @@ const ComingSoon = () => {
     })
     gsap.to(blueBlurRef.current, {
       y: -100,
-
-      rotate: 120,
+      rotateZ: 120,
       scale: 1.5,
     })
     gsap.to(redBlurRef.current, {
       x: -100,
-      rotate: 120,
+      rotateZ: 120,
     })
     gsap.to(yellowBlurRef.current, {
       rotate: 120,

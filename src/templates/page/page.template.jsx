@@ -48,6 +48,24 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_MiscContent {
             ...MiscContent
           }
+          ... on WpPage_Pagebuilder_Layouts_HomeHero {
+            ...HomeHero
+          }
+          ... on WpPage_Pagebuilder_Layouts_ServicesSlider {
+            ...ServicesSlider
+          }
+          ... on WpPage_Pagebuilder_Layouts_InfoRow {
+            ...InfoRow
+          }
+          ... on WpPage_Pagebuilder_Layouts_ContactSection {
+            ...ContactSection
+          }
+          ... on WpPage_Pagebuilder_Layouts_LogosGrid {
+            ...LogosGrid
+          }
+          ... on WpPage_Pagebuilder_Layouts_StatsGrid {
+            ...StatsGrid
+          }
         }
         pageConfiguration {
           hideFooter

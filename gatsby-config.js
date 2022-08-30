@@ -23,15 +23,15 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-gatsby-cloud`,
     // Make sure this plugin is first in the array of plugins
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-111111111-1",
-        // this option places the tracking script into the head of the DOM
-        head: true,
-        // other options
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: "UA-111111111-1",
+    //     // this option places the tracking script into the head of the DOM
+    //     head: true,
+    //     // other options
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -78,7 +78,7 @@ module.exports = {
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
-    //     name: `gatsby-starter-default`,
+    //     name: `DIIP`,
     //     short_name: `starter`,
     //     start_url: `/`,
     //     background_color: `transparent`,

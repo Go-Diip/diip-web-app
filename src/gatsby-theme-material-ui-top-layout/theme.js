@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material/styles"
 
 const theme = createTheme({
-  navHeight: 74,
+  navHeight: 100,
   sectionPadding: "padding-top: 1.5em; padding-bottom: 1.5em;",
   fonts: {
-    primary: "Poppins",
+    primary: "Avenir Next Regular",
   },
   layout: {
     contentWidth: 1236,
@@ -12,13 +12,13 @@ const theme = createTheme({
   palette: {
     primary: {
       // contrastText: "rgba(0, 0, 0, 0.87)",
-      main: "#E65924",
+      main: "rgba(16, 16, 16, 1)",
       light: "#F7FBFF",
       dark: "#1D0902",
     },
     secondary: {
       // contrastText: "rgba(0, 0, 0, 0.87)",
-      main: "#261003",
+      main: "#001EF5",
       light: "#1F1D2F",
       dark: "#1F1D2F",
     },
@@ -40,7 +40,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `"Poppins", "Open Sans", "Arial", sans-serif`,
+    fontFamily: `"Avenir Next Regular", "Open Sans", "Arial", sans-serif`,
   },
 })
 
