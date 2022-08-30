@@ -1,11 +1,16 @@
 import React from "react"
 import * as S from "./slider-arrow.styles.jsx"
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
+import ArrowBack from "../../assets/arrow-white.svg"
 
 const SliderArrow = ({ className, onClick }) => (
-  <S.Button className={className} onClick={onClick} component="div">
+  <S.Button
+    disableRipple
+    className={className}
+    onClick={onClick}
+    component="div"
+  >
     <S.IconWrapper>
-      <ArrowBackIosIcon />
+      <ArrowBack />
     </S.IconWrapper>
   </S.Button>
 )

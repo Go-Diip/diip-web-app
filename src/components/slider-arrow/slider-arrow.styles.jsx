@@ -10,12 +10,13 @@ export const Button = styled(IconButton)`
   align-items: center;!important;
   
   svg {
-    fill: white;
+    //fill: white;
   }
   transition: 0.3s all ease;
   :not(&.swiper-button-disabled) {
     border: 2px solid white;
     &:hover {
+      border: 2px solid ${({ theme }) => theme.palette.secondary.main};
       background-color: ${({ theme }) => theme.palette.secondary.main};
     }
   }
@@ -24,9 +25,9 @@ export const Button = styled(IconButton)`
 
   &.swiper-button-disabled {
     border: 2px solid rgba(255, 255, 255, 0.16);
-    //svg {
-    //  opacity: 0.5;
-    //}
+    svg {
+      opacity: 0.16;
+    }
   }
   &.next-testimonial,
   &.next {
