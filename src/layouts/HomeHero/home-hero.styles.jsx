@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
+import GradientBG from "../../assets/gradient.svg"
+import { Container } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)`
   background-color: ${({ theme }) => theme.palette.primary.main};
@@ -10,6 +12,18 @@ export const Wrapper = styled(SectionWrapper)`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+export const Gradient = styled(GradientBG)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
+export const CustomContainer = styled(Container)`
+  position: relative;
+  z-index: 2;
 `
 
 export const Title = styled.h1`
