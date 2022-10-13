@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
 import GradientBG from "../../assets/gradient.svg"
-import { Container } from "@mui/material"
+import { Container, Typography } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)`
   background-color: ${({ theme }) => theme.palette.primary.main};
@@ -31,11 +31,34 @@ export const Title = styled.h1`
   line-height: 64px;
   font-weight: 600;
   color: ${({ theme }) => theme.palette.text.light};
-  max-width: 504px;
+  text-align: center;
   margin: auto;
+  white-space: nowrap;
+  .Typewriter {
+    display: inline-block;
+    font-weight: 400;
+    -webkit-text-stroke: 1px ${({ theme }) => theme.palette.text.light};
+    color: transparent;
+  }
   ${({ theme }) => theme.breakpoints.up("md")} {
     font-size: ${({ theme }) => theme.typography.pxToRem(104)};
     line-height: 104px;
+  }
+`
+
+export const TypewriterText = styled(Typography)`
+  font-size: ${({ theme }) => theme.typography.pxToRem(18)};
+  font-family: ${({ theme }) => theme.fonts.tertiary};
+  margin-top: 0.5rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #46281f;
+  .Typewriter {
+    display: inline-block;
+    color: #00b2e4;
+  }
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    font-size: ${({ theme }) => theme.typography.pxToRem(48)};
   }
 `
 
