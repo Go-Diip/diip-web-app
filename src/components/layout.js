@@ -38,7 +38,7 @@ const Layout = ({ seo, children }) => {
         duration: 60,
       },
       ease: "none",
-      y: 2800,
+      y: 2600,
     })
   }, [])
   return (
