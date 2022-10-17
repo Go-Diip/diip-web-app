@@ -264,4 +264,6 @@ export const GradientWrapper = styled.div`
   transform: translateX(-50%);
   width: 100%;
   z-index: 3;
+  display: flex;
+  justify-content: center;
 `
