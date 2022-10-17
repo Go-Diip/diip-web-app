@@ -13,15 +13,11 @@ const HomeHero = ({ title }) => {
   }
   useEffect(() => {
     gsap.to(".gradient", {
-      scrollTrigger: {
-        trigger: ".wrapper",
-        markers: true,
-        scrub: true,
-        scale: 2,
-        duration: 2,
-        start: "top top",
-        end: "+=3000 +=3000",
-      },
+      scale: 1.2,
+      duration: 5,
+      ease: "none",
+      yoyo: true,
+      repeat: -1,
     })
   }, [])
   return (
