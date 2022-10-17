@@ -13,6 +13,7 @@ import NextStepBanner from "../layouts/NextStepBanner"
 import StatsGrid from "../layouts/StatsGrid"
 import ServicesSlider from "../layouts/ServicesSlider"
 import ContactSection from "../layouts/ContactSection"
+import ClientSlider from "../layouts/ClientsSlider/clients-slider.component"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -90,6 +91,15 @@ const Layouts = () => {
       <ContactSection
         title="Let’s to take the next step"
         description="Let's start filling the following form and send us a message or if you prefer a schedule a meeting you can request it"
+      />
+      <ClientSlider
+        slides={[
+          { image: staticQuery.card, url: "" },
+          { image: staticQuery.card, url: "" },
+          { image: staticQuery.card, url: "" },
+          { image: staticQuery.card, url: "" },
+          { image: staticQuery.card, url: "" },
+        ]}
       />
     </Layout>
   )
