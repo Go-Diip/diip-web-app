@@ -66,6 +66,9 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_StatsGrid {
             ...StatsGrid
           }
+          ... on WpPage_Pagebuilder_Layouts_ClientsSlider {
+            ...ClientsSlider
+          }
         }
         pageConfiguration {
           hideFooter

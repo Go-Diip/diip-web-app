@@ -6,6 +6,7 @@ import ServicesSlider from "./layouts/ServicesSlider"
 import ContactSection from "./layouts/ContactSection"
 import LogosGrid from "./layouts/LogosGrid"
 import StatsGrid from "./layouts/StatsGrid"
+import ClientSlider from "./layouts/ClientsSlider"
 
 export const getPageLayout = layout => {
   const layoutName = layout?.fieldGroupName?.split("_").pop().trim()
@@ -25,5 +26,7 @@ export const getPageLayout = layout => {
       return <LogosGrid {...layout} />
     case "StatsGrid":
       return <StatsGrid {...layout} />
+    case "ClientsSlider":
+      return <ClientSlider {...layout} />
   }
 }
