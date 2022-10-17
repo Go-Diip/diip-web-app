@@ -3,8 +3,8 @@ import SectionWrapper from "../../components/section-wrapper/section-wrapper.com
 import CustomImage from "../../components/custom-image/custom-image.component"
 
 export const Wrapper = styled(SectionWrapper)`
-  background-color: ${({ theme }) => theme.palette.primary.main};
-  backdrop-filter: blur(16px);
+  position: relative;
+  z-index: 4;
   color: white;
 `
 

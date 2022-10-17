@@ -3,6 +3,8 @@ import SectionWrapper from "../../components/section-wrapper/section-wrapper.com
 import CustomImage from "../../components/custom-image/custom-image.component"
 
 export const Wrapper = styled(SectionWrapper)`
+  position: relative;
+  z-index: 4;
   .swiper {
     overflow: unset;
   }

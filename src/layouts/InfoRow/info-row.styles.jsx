@@ -3,10 +3,9 @@ import SectionWrapper from "../../components/section-wrapper/section-wrapper.com
 import { Typography } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)`
-  background-color: ${({ theme }) => theme.palette.primary.main};
   backdrop-filter: blur(16px);
   position: relative;
-  z-index: 1;
+  z-index: 4;
   color: white;
   padding: 9rem 0 6rem 0;
 `
