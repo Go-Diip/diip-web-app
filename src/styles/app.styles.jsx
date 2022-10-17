@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle, css } from "styled-components"
+import GradientBG from "../assets/gradient.svg"
 
 const snipcart = css`
      .snipcart * {
@@ -242,10 +243,25 @@ export const LayoutTitle = styled.h2`
 
 export const AppContainer = styled.main`
   position: relative;
+  z-index: 4;
   display: flex;
   flex: 1;
   flex-direction: column;
   padding-top: ${({ theme }) => theme.navHeight}px;
   margin-top: -${({ theme }) => theme.navHeight}px;
   background-color: ${({ theme }) => theme.palette.primary.main};
+`
+
+export const Gradient = styled(GradientBG)`
+  opacity: 0.5;
+  transform: scale(0.8);
+`
+
+export const GradientWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 3;
 `

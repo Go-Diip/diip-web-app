@@ -4,17 +4,19 @@ import GradientBG from "../../assets/gradient.svg"
 import { Container, Typography } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)`
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: transparent;
   backdrop-filter: blur(16px);
   height: 100vh;
   position: relative;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
-export const Gradient = styled(GradientBG)`
+export const Gradient = styled(GradientBG)``
+
+export const GradientWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
