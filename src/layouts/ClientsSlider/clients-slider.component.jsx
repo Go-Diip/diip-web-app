@@ -10,13 +10,13 @@ import "swiper/css/navigation"
 
 const ClientSlider = ({ slides }) => {
   const theme = useTheme()
-  const isSM = useMediaQuery(theme.breakpoints.down("sm"))
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
   if (!slides) return null
 
   return (
     <S.Wrapper>
-      <Container>
+      <Container maxWidth={isMobile?'md':'false'} disableGutters={isMobile?false:true}>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={8}
@@ -39,7 +39,7 @@ const ClientSlider = ({ slides }) => {
               spaceBetween: 30,
             },
           }}
-          loop={false}
+          loop={true}
         >
           {slides.map(({ image, url }, index) => (
             <SwiperSlide key={`slider-item-${index}`}>

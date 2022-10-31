@@ -4,9 +4,14 @@ import CustomImage from "../../components/custom-image/custom-image.component"
 
 export const Wrapper = styled(SectionWrapper)`
   position: relative;
+  
   z-index: 4;
   .swiper {
     overflow: unset;
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+  padding-top: 8rem;
   }
 `
 
