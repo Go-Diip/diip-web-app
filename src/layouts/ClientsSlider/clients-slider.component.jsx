@@ -16,7 +16,7 @@ const ClientSlider = ({ slides }) => {
 
   return (
     <S.Wrapper>
-      <Container maxWidth={isMobile?'md':'false'} disableGutters={isMobile?false:true}>
+      <Container maxWidth={isMobile?'md':'false'} disableGutters={!isMobile}>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={8}
@@ -35,7 +35,7 @@ const ClientSlider = ({ slides }) => {
               spaceBetween: 10,
             },
             900: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
           }}
