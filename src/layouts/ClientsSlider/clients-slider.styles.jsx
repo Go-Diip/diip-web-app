@@ -4,14 +4,14 @@ import CustomImage from "../../components/custom-image/custom-image.component"
 
 export const Wrapper = styled(SectionWrapper)`
   position: relative;
-  
+
   z-index: 4;
   .swiper {
     overflow: unset;
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-  padding-top: 8rem;
+    padding-top: 10rem;
   }
 `
 
@@ -34,3 +34,20 @@ export const SlideImage = styled(CustomImage)`
   }
 `
 export const ImageWrapper = styled.div``
+
+export const TextWrapper = styled.div``
+
+export const Title = styled.h2`
+  text-align: center;
+  max-width: 630px;
+  margin: auto;
+  color: white;
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.typography.pxToRem(40)};
+  line-height: 120%;
+  letter-spacing: -0.02em;
+`
+
+export const SwiperWrapper = styled.div`
+  padding: ${({ theme }) => theme.typography.pxToRem(70)} 0;
+`

@@ -93,6 +93,7 @@ const Layouts = () => {
         description="Let's start filling the following form and send us a message or if you prefer a schedule a meeting you can request it"
       />
       <ClientSlider
+        title="Test"
         slides={[
           { image: staticQuery.card, url: "" },
           { image: staticQuery.card, url: "" },
