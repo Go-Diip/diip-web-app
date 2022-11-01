@@ -15,7 +15,7 @@ const StatsGrid = ({ title }) => {
     gsap.to(".line", {
       scrollTrigger: {
         trigger: ".statsWrapper",
-        markers: true,
+        // markers: true,
         start: "top center",
         duration: 1.5,
         onEnter: startCounters,
