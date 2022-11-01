@@ -19,6 +19,7 @@ const StatsGrid = ({ title }) => {
         start: "top center",
         duration: 1.5,
         onEnter: startCounters,
+        onLeaveBack: self => self.disable(),
       },
       ease: "none",
       stagger: 0.5,
