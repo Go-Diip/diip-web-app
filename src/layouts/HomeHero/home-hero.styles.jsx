@@ -36,7 +36,8 @@ export const Title = styled.h1`
   text-align: center;
   margin: auto;
   white-space: nowrap;
-  .Typewriter {
+
+  > span {
     display: inline-block;
     font-weight: 400;
     line-height: 140%;
