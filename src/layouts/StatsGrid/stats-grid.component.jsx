@@ -1,14 +1,55 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import * as S from "./stats-grid.styles"
 import { Container, Grid } from "@mui/material"
-import CountUp, { useCountUp } from "react-countup"
+import { useCountUp } from "react-countup"
+import { isBrowser } from "../../utils"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StatsGrid = ({ title }) => {
-  useCountUp({ ref: "bottomCounter", end: 6.3, decimals: 1, duration: 1 })
-  useCountUp({ ref: "topCounter", end: 65, duration: 1 })
+  const [startCounter, setStartCounter] = useState(false)
+  if (isBrowser) {
+    gsap.registerPlugin(ScrollTrigger)
+  }
+  useEffect(() => {
+    gsap.to(".line", {
+      scrollTrigger: {
+        trigger: ".statsWrapper",
+        markers: true,
+        start: "top center",
+        duration: 1.5,
+        onEnter: startCounters,
+      },
+      ease: "none",
+      stagger: 0.5,
+      width: "100%",
+    })
+  }, [])
+  const top = useRef(null)
+  const bottom = useRef(null)
+
+  const bottomCounter = useCountUp({
+    ref: bottom,
+    start: 0,
+    end: 6.3,
+    decimals: 1,
+    duration: 1.5,
+  })
+  const topCounter = useCountUp({
+    ref: top,
+    start: 0,
+    end: 65,
+    duration: 1.5,
+  })
+
+  const startCounters = () => {
+    setStartCounter(true)
+    bottomCounter.start()
+    topCounter.start()
+  }
 
   return (
-    <S.Wrapper>
+    <S.Wrapper className="statsWrapper">
       <Container maxWidth="md">
         <Grid container spacing={1}>
           <Grid item xs={12} md={6}>
@@ -16,10 +57,11 @@ const StatsGrid = ({ title }) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <S.RightWrapper>
-              <S.InfoWrapper className="border">
+              <S.Line className="line" />
+              <S.InfoWrapper>
                 <S.InfoColumn>
                   <S.Value className="right">
-                    <S.Value id="topCounter" />%
+                    <S.Value ref={top} />%
                   </S.Value>
                 </S.InfoColumn>
                 <S.InfoColumn>
@@ -32,6 +74,7 @@ const StatsGrid = ({ title }) => {
                   </S.Description>
                 </S.InfoColumn>
               </S.InfoWrapper>
+              <S.Line className="line" />
               <S.InfoWrapper>
                 <S.InfoColumn>
                   <S.Description className="right">
@@ -40,12 +83,13 @@ const StatsGrid = ({ title }) => {
                 </S.InfoColumn>
                 <S.InfoColumn>
                   <S.Value>
-                    $<S.Value id="bottomCounter" />
+                    $<S.Value ref={bottom} />
                   </S.Value>
                   <S.Description>trillion by 2024.</S.Description>
                   <S.Description className="small">Statista</S.Description>
                 </S.InfoColumn>
               </S.InfoWrapper>
+              <S.Line className="line" />
             </S.RightWrapper>
           </Grid>
         </Grid>

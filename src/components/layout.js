@@ -33,7 +33,7 @@ const Layout = ({ seo, children }) => {
       scrollTrigger: {
         trigger: ".wrapper",
         start: "+=600 center",
-        end: "bottom +=700",
+        end: "bottom +=500",
         scrub: true,
         duration: 60,
       },
