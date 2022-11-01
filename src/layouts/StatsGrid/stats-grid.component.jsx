@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useRef } from "react"
 import * as S from "./stats-grid.styles"
 import { Container, Grid } from "@mui/material"
+import CountUp, { useCountUp } from "react-countup"
 
 const StatsGrid = ({ title }) => {
+  useCountUp({ ref: "bottomCounter", end: 6.3, decimals: 1, duration: 1 })
+  useCountUp({ ref: "topCounter", end: 65, duration: 1 })
+
   return (
     <S.Wrapper>
       <Container maxWidth="md">
@@ -14,7 +18,9 @@ const StatsGrid = ({ title }) => {
             <S.RightWrapper>
               <S.InfoWrapper className="border">
                 <S.InfoColumn>
-                  <S.Value className="right">65%</S.Value>
+                  <S.Value className="right">
+                    <S.Value id="topCounter" />%
+                  </S.Value>
                 </S.InfoColumn>
                 <S.InfoColumn>
                   <S.Description>
@@ -33,7 +39,9 @@ const StatsGrid = ({ title }) => {
                   </S.Description>
                 </S.InfoColumn>
                 <S.InfoColumn>
-                  <S.Value>$6.3</S.Value>
+                  <S.Value>
+                    $<S.Value id="bottomCounter" />
+                  </S.Value>
                   <S.Description>trillion by 2024.</S.Description>
                   <S.Description className="small">Statista</S.Description>
                 </S.InfoColumn>
