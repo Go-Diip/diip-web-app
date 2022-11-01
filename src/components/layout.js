@@ -16,7 +16,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { isBrowser } from "../utils"
 
-const Layout = ({ seo, children }) => {
+const Layout = ({ seo, children, hideGradient }) => {
   if (isBrowser) {
     gsap.registerPlugin(ScrollTrigger)
   }
@@ -46,9 +46,12 @@ const Layout = ({ seo, children }) => {
       {seo && <SEO data={seo} />}
       <Header />
       <AppContainer className="wrapper">
-        <GradientWrapper className="gradientWrapper">
-          <Gradient className="gradient" />
-        </GradientWrapper>
+        {!hideGradient && (
+          <GradientWrapper className="gradientWrapper">
+            <Gradient className="gradient" />
+          </GradientWrapper>
+        )}
+
         {children}
       </AppContainer>
       <Footer />
