@@ -7,52 +7,61 @@ import CustomLink from "../../components/custom-link/custom-link.component"
 
 import "swiper/css"
 import "swiper/css/navigation"
+import parse from "html-react-parser"
 
-const ClientSlider = ({ slides }) => {
+const ClientSlider = ({ slides, title }) => {
   const theme = useTheme()
-  const isSM = useMediaQuery(theme.breakpoints.down("sm"))
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
   if (!slides) return null
 
   return (
     <S.Wrapper>
-      <Container>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={8}
-          slidesPerView={1}
-          navigation={{
-            prevEl: ".prev-slider",
-            nextEl: ".next-slider",
-          }}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            600: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-            900: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-          }}
-          loop={false}
-        >
-          {slides.map(({ image, url }, index) => (
-            <SwiperSlide key={`slider-item-${index}`}>
-              <CustomLink url={url}>
-                <S.SlideImage
-                  fit="cover"
-                  img={image}
-                  arPaddingPercentage={114}
-                />
-              </CustomLink>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <Container
+        maxWidth={isMobile ? "md" : "false"}
+        disableGutters={!isMobile}
+      >
+        <S.TextWrapper>
+          <S.Title>{parse(title)}</S.Title>
+        </S.TextWrapper>
+        <S.SwiperWrapper>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={8}
+            slidesPerView={1}
+            navigation={{
+              prevEl: ".prev-slider",
+              nextEl: ".next-slider",
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              600: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              900: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
+            loop={true}
+          >
+            {slides.map(({ image, url }, index) => (
+              <SwiperSlide key={`slider-item-${index}`}>
+                <CustomLink url={url}>
+                  <S.SlideImage
+                    fit="cover"
+                    img={image}
+                    arPaddingPercentage={114}
+                  />
+                </CustomLink>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </S.SwiperWrapper>
       </Container>
     </S.Wrapper>
   )

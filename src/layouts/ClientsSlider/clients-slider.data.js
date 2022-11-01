@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 export const query = graphql`
   fragment ClientsSlider on WpPage_Pagebuilder_Layouts_ClientsSlider {
     fieldGroupName
+    title
     slides {
       url
       image {

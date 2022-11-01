@@ -3,9 +3,10 @@ import SectionWrapper from "../../components/section-wrapper/section-wrapper.com
 import { Grid, Typography } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)`
-  background-color: ${({ theme }) => theme.palette.primary.main};
   backdrop-filter: blur(16px);
   color: white;
+  position: relative;
+  z-index: 4;
 `
 
 export const Title = styled.h2`
@@ -17,12 +18,16 @@ export const Title = styled.h2`
 `
 
 export const RightWrapper = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.24);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+`
+
+export const Line = styled.div`
+  background: rgba(255, 255, 255, 0.24);
+  width: 0;
+  height: 1px;
 `
 
 export const InfoWrapper = styled.div`
@@ -30,9 +35,6 @@ export const InfoWrapper = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.typography.pxToRem(24)};
   padding: ${({ theme }) => theme.typography.pxToRem(24)} 0;
-  &.border {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
-  }
 `
 
 export const Value = styled.span`

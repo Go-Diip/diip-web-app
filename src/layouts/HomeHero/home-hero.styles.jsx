@@ -30,7 +30,7 @@ export const CustomContainer = styled(Container)`
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.typography.pxToRem(64)};
-  line-height: 64px;
+  line-height: 140%;
   font-weight: 600;
   color: ${({ theme }) => theme.palette.text.light};
   text-align: center;
@@ -39,6 +39,7 @@ export const Title = styled.h1`
   .Typewriter {
     display: inline-block;
     font-weight: 400;
+    line-height: 140%;
     -webkit-text-stroke: 1px ${({ theme }) => theme.palette.text.light};
     color: transparent;
   }
