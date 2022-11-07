@@ -75,6 +75,11 @@ export const CustomButton = styled(Button)`
     border-color: lightgray;
     cursor: not-allowed;
   }
+
+  > span {
+    position: relative;
+    top: 2px;
+  }
 `
 
 export const CustomButtonLink = styled(AniLink)`

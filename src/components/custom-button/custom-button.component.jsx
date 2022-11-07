@@ -28,7 +28,7 @@ const CustomButton = props => {
         variant="contained"
         {...props}
       >
-        {children}
+        <span>{children}</span>
       </S.CustomButton>
       {/*}*/}
     </>

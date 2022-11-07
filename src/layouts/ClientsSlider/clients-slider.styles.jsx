@@ -27,9 +27,10 @@ export const SlideImage = styled(CustomImage)`
 
   img {
     object-fit: cover !important;
+    transition: all 0.3s ease !important;
     &:hover {
-      transition: 0.7s all ease;
-      transform: translateY(40px);
+      //transform: translateY(40px);
+      transform: scale(0.9);
     }
   }
 `
