@@ -32,6 +32,14 @@ export const Title = styled.h2`
   }
 `
 
+export const TopLinksWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+`
+
 export const Link = styled.a`
   text-decoration: none;
   transition: 0.3s all ease;
