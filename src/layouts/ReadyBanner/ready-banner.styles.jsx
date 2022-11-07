@@ -5,6 +5,8 @@ import CustomButton from "../../components/custom-button/custom-button.component
 export const Wrapper = styled(SectionWrapper)`
   position: relative;
   z-index: 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
 `
 
 export const Title = styled.h3`
