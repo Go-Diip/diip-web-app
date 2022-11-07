@@ -13,8 +13,9 @@ export const Wrapper = styled(SectionWrapper)`
 `
 
 export const Title = styled.h2`
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   ${({ theme }) => theme.breakpoints.up("md")} {
+    margin-bottom: 4rem;
     font-weight: 600;
     font-size: ${({ theme }) => theme.typography.pxToRem(40)};
     line-height: 48px;
@@ -22,11 +23,11 @@ export const Title = styled.h2`
 `
 
 export const Logo = styled(CustomImage)`
-  width: 70px;
-  height: 50px;
+  //width: 70px;
+  //height: 50px;
   img {
-    width: 70px;
-    height: 50px;
+    //width: 70px;
+    //height: 50px;
     object-fit: contain !important;
   }
 `
@@ -36,4 +37,15 @@ export const ImageWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+`
+
+export const LogosWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    flex-wrap: wrap !important;
+  }
 `
