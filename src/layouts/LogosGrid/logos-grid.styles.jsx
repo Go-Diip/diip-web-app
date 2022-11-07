@@ -6,6 +6,10 @@ export const Wrapper = styled(SectionWrapper)`
   position: relative;
   z-index: 4;
   color: white;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    padding: 3em 0 5em 0;
+  }
 `
 
 export const Title = styled.h2`

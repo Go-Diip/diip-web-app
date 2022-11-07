@@ -7,6 +7,9 @@ export const Wrapper = styled(SectionWrapper)`
   z-index: 4;
   border-top: 1px solid rgba(255, 255, 255, 0.24);
   border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    padding: 5em 0;
+  }
 `
 
 export const Title = styled.h3`
@@ -15,6 +18,10 @@ export const Title = styled.h3`
   font-weight: 700;
   font-size: ${({ theme }) => theme.typography.pxToRem(40)};
   line-height: 56px;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    font-size: ${({ theme }) => theme.typography.pxToRem(32)};
+    line-height: 40px;
+  }
 `
 
 export const ButtonWrapper = styled.div`

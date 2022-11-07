@@ -21,6 +21,9 @@ export const TopWrapper = styled.div`
 
 export const BottomWrapper = styled.div`
   padding: ${({ theme }) => theme.typography.pxToRem(30)} 0;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    padding: 0;
+  }
 `
 
 export const Title = styled.h2`
@@ -79,5 +82,16 @@ export const Description = styled.p`
   text-align: center;
   ${({ theme }) => theme.breakpoints.up("md")} {
     text-align: left;
+  }
+`
+
+export const BottomContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    flex-direction: column-reverse;
+    gap: 56px;
+    padding: 43px 0;
   }
 `
