@@ -12,7 +12,7 @@ const HomeHero = ({ title }) => {
           <S.Title>
             Digital Products that{parse("<br>")}
             <Typewriter
-              words={["Deeply", "Diiply"]}
+              words={["deeply", "diiply"]}
               loop={1}
               cursor
               cursorStyle="|"

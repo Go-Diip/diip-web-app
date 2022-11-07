@@ -72,6 +72,9 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_FeaturesSection {
             ...FeaturesSection
           }
+          ... on WpPage_Pagebuilder_Layouts_ReadyBanner {
+            ...ReadyBanner
+          }
         }
         pageConfiguration {
           hideFooter
