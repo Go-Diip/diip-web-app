@@ -2,8 +2,9 @@ import React from "react"
 import * as S from "./clients-slider.styles"
 import { Container, Grid, useMediaQuery, useTheme } from "@mui/material"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination } from "swiper"
+import { Navigation, Pagination, Autoplay } from "swiper"
 import CustomLink from "../../components/custom-link/custom-link.component"
+import "swiper/css/autoplay"
 
 import "swiper/css"
 import "swiper/css/navigation"
@@ -26,7 +27,10 @@ const ClientSlider = ({ slides, title }) => {
         </S.TextWrapper>
         <S.SwiperWrapper>
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
+            autoplay={{
+              disableOnInteraction: false,
+            }}
             spaceBetween={8}
             slidesPerView={1}
             navigation={{

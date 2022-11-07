@@ -81,3 +81,9 @@ export const Description = styled.p`
     text-align: left;
   }
 `
+
+export const BottomContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`

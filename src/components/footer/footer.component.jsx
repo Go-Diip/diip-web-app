@@ -2,6 +2,7 @@ import React from "react"
 
 import * as S from "./footer.styles"
 import { Container, Grid } from "@mui/material"
+import SocialLinks from "../social-links/social-links.component"
 
 const Footer = ({ className }) => {
   return (
@@ -27,9 +28,12 @@ const Footer = ({ className }) => {
       </S.TopWrapper>
       <S.BottomWrapper>
         <Container maxWidth="md">
-          <S.Description>
-            © {new Date().getFullYear()} Diip. All Rights Reserved.
-          </S.Description>
+          <S.BottomContent>
+            <S.Description>
+              © {new Date().getFullYear()} Diip. All Rights Reserved.
+            </S.Description>
+            <SocialLinks />
+          </S.BottomContent>
         </Container>
       </S.BottomWrapper>
     </S.Wrapper>
