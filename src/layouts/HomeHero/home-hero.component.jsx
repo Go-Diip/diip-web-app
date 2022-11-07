@@ -11,15 +11,8 @@ const HomeHero = ({ title }) => {
         <div>
           <S.Title>
             Digital Products that{parse("<br>")}
-            {/*<Typewriter*/}
-            {/*  options={{*/}
-            {/*    strings: ["deeply", "diiply"],*/}
-            {/*    autoStart: true,*/}
-            {/*    pauseFor: 100,*/}
-            {/*  }}*/}
-            {/*/>*/}
             <Typewriter
-              words={["Deeply", "Diiply"]}
+              words={["deeply", "diiply"]}
               loop={1}
               cursor
               cursorStyle="|"

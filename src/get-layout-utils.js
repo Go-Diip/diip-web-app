@@ -8,6 +8,7 @@ import LogosGrid from "./layouts/LogosGrid"
 import StatsGrid from "./layouts/StatsGrid"
 import ClientSlider from "./layouts/ClientsSlider"
 import FeaturesSection from "./layouts/FeaturesSection"
+import ReadyBanner from "./layouts/ReadyBanner"
 
 export const getPageLayout = layout => {
   const layoutName = layout?.fieldGroupName?.split("_").pop().trim()
@@ -31,5 +32,7 @@ export const getPageLayout = layout => {
       return <ClientSlider {...layout} />
     case "FeaturesSection":
       return <FeaturesSection {...layout} />
+    case "ReadyBanner":
+      return <ReadyBanner {...layout} />
   }
 }

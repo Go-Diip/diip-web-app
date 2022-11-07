@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import * as S from "./stats-grid.styles"
 import { Container, Grid } from "@mui/material"
-import { useCountUp } from "react-countup"
 import { isBrowser } from "../../utils"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { CountUp } from "use-count-up"
 
 const StatsGrid = ({ title }) => {
   const [startCounter, setStartCounter] = useState(false)
@@ -26,27 +26,9 @@ const StatsGrid = ({ title }) => {
       width: "100%",
     })
   }, [])
-  const top = useRef(null)
-  const bottom = useRef(null)
-
-  const bottomCounter = useCountUp({
-    ref: bottom,
-    start: 0,
-    end: 6.3,
-    decimals: 1,
-    duration: 1.5,
-  })
-  const topCounter = useCountUp({
-    ref: top,
-    start: 0,
-    end: 65,
-    duration: 1.5,
-  })
 
   const startCounters = () => {
     setStartCounter(true)
-    bottomCounter.start()
-    topCounter.start()
   }
 
   return (
@@ -62,7 +44,15 @@ const StatsGrid = ({ title }) => {
               <S.InfoWrapper>
                 <S.InfoColumn>
                   <S.Value className="right">
-                    <S.Value ref={top} />%
+                    {/*<S.Value ref={top} />%*/}
+                    <S.Value>
+                      <CountUp
+                        isCounting={startCounter}
+                        end={65}
+                        duration={1.5}
+                      />
+                      %
+                    </S.Value>
                   </S.Value>
                 </S.InfoColumn>
                 <S.InfoColumn>
@@ -84,7 +74,12 @@ const StatsGrid = ({ title }) => {
                 </S.InfoColumn>
                 <S.InfoColumn>
                   <S.Value>
-                    $<S.Value ref={bottom} />
+                    <CountUp
+                      isCounting={startCounter}
+                      end={6.3}
+                      duration={1.5}
+                    />
+                    $
                   </S.Value>
                   <S.Description>trillion by 2024.</S.Description>
                   <S.Description className="small">Statista</S.Description>
