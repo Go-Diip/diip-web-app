@@ -78,7 +78,7 @@ export const CustomButton = styled(Button)`
 
   > span {
     position: relative;
-    top: 2px;
+    top: 1px;
   }
 `
 
