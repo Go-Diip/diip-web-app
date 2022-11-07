@@ -15,8 +15,10 @@ export const Icon = styled(CheckCircleOutlineRoundedIcon)`
 
 export const FeatureWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 14px;
+  svg {
+    margin-top: 5px;
+  }
 `
 
 export const Feature = styled.span`

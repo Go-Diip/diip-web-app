@@ -48,6 +48,9 @@ export const Title = styled.h1`
     font-size: ${({ theme }) => theme.typography.pxToRem(104)};
     line-height: 104px;
   }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    font-size: 2.2rem;
+  }
 `
 
 export const TypewriterText = styled(Typography)`

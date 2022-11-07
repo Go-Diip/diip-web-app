@@ -22,6 +22,9 @@ export const Wrapper = styled(SectionWrapper)`
   .MuiContainer-root {
     position: relative;
   }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    padding: 3em 0 3em 0;
+  }
 `
 
 export const Title = styled.h2`
