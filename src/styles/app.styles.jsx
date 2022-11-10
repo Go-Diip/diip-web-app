@@ -1,5 +1,14 @@
-import styled, { createGlobalStyle, css } from "styled-components"
+import styled, { createGlobalStyle, css, keyframes } from "styled-components"
 import GradientBG from "../assets/gradient.svg"
+
+const moveGradient = keyframes`
+  0%   {top: 0; left: 6px}
+  10%   {top: -50px; left: 50px}
+  25%  {top: -77px; left: 77px}
+  50%  {top: 20px; left: -60px}
+  75%   {top: 70px; left: 70px}
+  100%  {top: 5px; left: 0}
+`
 
 const snipcart = css`
      .snipcart * {
@@ -253,15 +262,21 @@ export const AppContainer = styled.main`
 `
 
 export const Gradient = styled(GradientBG)`
+  transition: all 0.3s ease;
   opacity: 0.5;
-  transform: scale(0.8);
+  position: relative;
+  transform: scale(1.3);
+  animation: ${moveGradient} 8s infinite;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    transform: scale(0.6);
+  } ;
 `
 
 export const GradientWrapper = styled.div`
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   z-index: 3;
   display: flex;
