@@ -7,7 +7,7 @@ import * as S from "./contact-section.styles.jsx"
 const ContactSection = ({ title, description }) => {
   return (
     <S.Wrapper contained maxWidth="md">
-      <Grid container spacing={8}>
+      <Grid container spacing={{ xs: 1, md: 8 }}>
         <Grid item xs={12} md={6}>
           {title && <S.Title>{title}</S.Title>}
           {description && <S.Description>{description}</S.Description>}

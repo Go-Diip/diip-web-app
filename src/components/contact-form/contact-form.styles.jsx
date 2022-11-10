@@ -4,10 +4,7 @@ import CustomButton from "../custom-button/custom-button.component"
 
 export const FormWrapper = styled.form`
   .MuiFormControl-root {
-    margin-bottom: 4.7rem;
-  }
-  .last-child {
-    margin-bottom: 2.2rem !important;
+    margin-bottom: 1.5rem;
   }
 
   .MuiSvgIcon-root {
@@ -25,6 +22,12 @@ export const FormWrapper = styled.form`
         transition: 0.3s ease all;
         transform: rotate(180deg);
       }
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    .MuiFormControl-root {
+      margin-bottom: 2rem;
     }
   }
 

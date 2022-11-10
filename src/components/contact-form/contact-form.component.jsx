@@ -97,12 +97,14 @@ const ContactForm = () => {
         <CustomInput
           register={register}
           label="Name"
+          autoComplete="name"
           errors={errors}
           name="name"
           validations={{ required: true }}
         />
         <CustomInput
           register={register}
+          autoComplete="email"
           label="E-mail"
           errors={errors}
           name="email"
@@ -161,7 +163,6 @@ const ContactForm = () => {
           name="message"
           multiline
           minRows={2}
-          className="last-child"
         />
 
         {/*<FormGroup>*/}

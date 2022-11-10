@@ -8,7 +8,6 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
-import SEO from "../components/seo/seo.component"
 import Header from "../components/header/header.component"
 import { AppContainer, Gradient, GradientWrapper } from "../styles/app.styles"
 import Footer from "./footer/footer.component"
@@ -17,7 +16,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { isBrowser } from "../utils"
 import LogRocket from "logrocket"
 
-const Layout = ({ seo, children, hideGradient }) => {
+const Layout = ({ children, hideGradient }) => {
   if (isBrowser) {
     gsap.registerPlugin(ScrollTrigger)
   }
