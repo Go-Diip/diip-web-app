@@ -34,17 +34,16 @@ function SEO({ data, meta }) {
     openGraphAuthor,
   } = data
 
-  // TODO replace with domain before going live
   const schemaOrgJSONLD = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    url: "https://DOMAIN-NAME.com",
+    url: process.env.GATSBY_WEBSITE_URL,
     name: title,
     description: opengraphDescription,
   }
 
   return (
-    <Helmet>
+    <>
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
@@ -62,11 +61,21 @@ function SEO({ data, meta }) {
         <meta name="robots" content="noindex" />
       )}
 
-      {canonical && <link rel="canonical" href={canonical} />}
+      {canonical && (
+        <link
+          rel="canonical"
+          href={`${process.env.GATSBY_WEBSITE_URL}${canonical}`}
+        />
+      )}
 
       {/* OpenGraph tags */}
 
-      {opengraphUrl && <meta property="og:url" content={opengraphUrl} />}
+      {opengraphUrl && (
+        <meta
+          property="og:url"
+          content={`${process.env.GATSBY_WEBSITE_URL}${opengraphUrl}`}
+        />
+      )}
 
       {opengraphTitle && <meta property="og:title" content={opengraphTitle} />}
 
@@ -80,7 +89,7 @@ function SEO({ data, meta }) {
         <meta property="og:site_name" content={opengraphSiteName} />
       )}
 
-      {opengraphImage && (
+      {opengraphImage?.sourceUrl && (
         <meta property="og:image" content={opengraphImage.sourceUrl} />
       )}
 
@@ -96,10 +105,10 @@ function SEO({ data, meta }) {
         <meta name="twitter:description" content={twitterDescription} />
       )}
 
-      {twitterImage && (
+      {twitterImage?.sourceUrl && (
         <meta name="twitter:image" content={twitterImage.sourceUrl} />
       )}
-    </Helmet>
+    </>
   )
 }
 

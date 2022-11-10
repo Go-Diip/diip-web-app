@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import { getPageLayout } from "../../get-layout-utils"
+import SEO from "../../components/seo/seo.component"
 
 export const query = graphql`
   query PageQuery($id: String!) {
@@ -85,6 +86,9 @@ export const query = graphql`
     }
   }
 `
+
+export const Head = ({ data }) => <SEO data={data?.wpPage?.seo} />
+
 const PageTemplate = ({ data }) => {
   const { seo, slug, pageBuilder, title } = data.wpPage
   const layouts = pageBuilder.layouts || []

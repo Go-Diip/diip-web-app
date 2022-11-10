@@ -48,7 +48,6 @@ const Layout = ({ seo, children, hideGradient }) => {
   }, [])
   return (
     <>
-      {seo && <SEO data={seo} />}
       <Header />
       <AppContainer className="wrapper">
         {!hideGradient && (
