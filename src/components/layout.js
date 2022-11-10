@@ -15,6 +15,7 @@ import Footer from "./footer/footer.component"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { isBrowser } from "../utils"
+import LogRocket from "logrocket"
 
 const Layout = ({ seo, children, hideGradient }) => {
   if (isBrowser) {
@@ -40,6 +41,10 @@ const Layout = ({ seo, children, hideGradient }) => {
       ease: "none",
       y: 2600,
     })
+
+    if (process.env.GATSBY_ACTIVE_ENV === "production") {
+      LogRocket.init("vjk8vl/diip")
+    }
   }, [])
   return (
     <>

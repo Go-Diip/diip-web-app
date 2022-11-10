@@ -43,6 +43,7 @@
     "js-cookie": "^3.0.1",
     "lodash.isempty": "^4.4.0",
     "lodash.uniqby": "^4.7.0",
+    "logrocket": "^3.0.1",
     "preact": "^10.8.0",
     "preact-render-to-string": "^5.2.0",
     "prop-types": "^15.7.2",
