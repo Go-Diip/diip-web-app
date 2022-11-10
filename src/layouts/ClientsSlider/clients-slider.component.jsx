@@ -55,7 +55,7 @@ const ClientSlider = ({ slides, title }) => {
           >
             {slides.map(({ image, url }, index) => (
               <SwiperSlide key={`slider-item-${index}`}>
-                <CustomLink url={url}>
+                <CustomLink url={url} target="_blank">
                   <S.SlideImage
                     fit="cover"
                     img={image}
