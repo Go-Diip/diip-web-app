@@ -34,6 +34,8 @@ export const Logo = styled(CustomImage)`
     //width: 70px;
     //height: 50px;
     object-fit: contain !important;
+    margin: auto;
+    display: block;
   }
 `
 
