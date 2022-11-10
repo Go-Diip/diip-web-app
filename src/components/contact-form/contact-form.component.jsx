@@ -164,19 +164,19 @@ const ContactForm = () => {
           className="last-child"
         />
 
-        <FormGroup>
-          <S.CustomFormControlLabel
-            value="isAcepted"
-            control={
-              <Checkbox
-                icon={<RadioButtonUnchecked />}
-                checkedIcon={<RadioButtonChecked />}
-                onChange={event => setAceptedPrivacy(event.target.checked)}
-              />
-            }
-            label="By submitting this form, I agree to the privacy policy."
-          />
-        </FormGroup>
+        {/*<FormGroup>*/}
+        {/*  <S.CustomFormControlLabel*/}
+        {/*    value="isAcepted"*/}
+        {/*    control={*/}
+        {/*      <Checkbox*/}
+        {/*        icon={<RadioButtonUnchecked />}*/}
+        {/*        checkedIcon={<RadioButtonChecked />}*/}
+        {/*        onChange={event => setAceptedPrivacy(event.target.checked)}*/}
+        {/*      />*/}
+        {/*    }*/}
+        {/*    label="By submitting this form, I agree to the privacy policy."*/}
+        {/*  />*/}
+        {/*</FormGroup>*/}
         {errorMessage && (
           <S.Message color="red">
             <p>{errorMessage}</p>
@@ -185,7 +185,7 @@ const ContactForm = () => {
         <S.SubmitCustomButton
           type="submit"
           className="blue"
-          disabled={!aceptedPrivacy || isLoading}
+          disabled={isLoading}
         >
           {isLoading && (
             <S.FormSpinner>

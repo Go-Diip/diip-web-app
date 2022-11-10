@@ -25,6 +25,11 @@ export const Title = styled.h2`
 export const Logo = styled(CustomImage)`
   //width: 70px;
   //height: 50px;
+  width: 100%;
+
+  > div {
+    max-height: 80px;
+  }
   img {
     //width: 70px;
     //height: 50px;
