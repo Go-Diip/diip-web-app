@@ -47,16 +47,11 @@ const Layout = ({ children, hideGradient }) => {
   }, [])
   return (
     <>
+      <GradientWrapper className="gradientWrapper">
+        <Gradient src="/gradient.png" className="gradient" />
+      </GradientWrapper>
       <Header />
-      <AppContainer className="wrapper">
-        {!hideGradient && (
-          <GradientWrapper className="gradientWrapper">
-            <Gradient className="gradient" />
-          </GradientWrapper>
-        )}
-
-        {children}
-      </AppContainer>
+      <AppContainer className="wrapper">{children}</AppContainer>
       <Footer />
     </>
   )

@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle, css, keyframes } from "styled-components"
-import GradientBG from "../assets/gradient.svg"
 
 const moveGradient = keyframes`
   0%   {top: 0; left: 6px}
@@ -175,6 +174,9 @@ const wordpress = css`
 `
 
 export const GlobalStyles = createGlobalStyle`
+  body {
+       background-color: ${({ theme }) => theme.palette.primary.main};
+  }
   @font-face {
     font-family: "Avenir Next Regular";
     src: url("/fonts/AvenirNext/AvenirNextLTPro-Regular.otf") format("opentype");
@@ -258,10 +260,10 @@ export const AppContainer = styled.main`
   flex-direction: column;
   padding-top: ${({ theme }) => theme.navHeight}px;
   margin-top: -${({ theme }) => theme.navHeight}px;
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  // background-color: ${({ theme }) => theme.palette.primary.main};
 `
 
-export const Gradient = styled(GradientBG)`
+export const Gradient = styled.img`
   transition: all 0.3s ease;
   opacity: 0.5;
   position: relative;

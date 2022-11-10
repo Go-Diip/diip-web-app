@@ -9,6 +9,10 @@ export const Navbar = styled(AppBar)`
   height: ${({ theme }) => theme.navHeight}px;
   //z-index: 4;
   //color: white;
+
+  &.transparent {
+    background-color: transparent;
+  }
 `
 
 export const Wrapper = styled.div`
