@@ -34,7 +34,8 @@ export const Logo = styled(CustomImage)`
     //width: 70px;
     //height: 50px;
     object-fit: contain !important;
-    margin: auto;
+    object-position: left;
+    //margin: auto;
     display: block;
   }
 `
@@ -45,14 +46,4 @@ export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
-export const LogosWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    flex-wrap: wrap !important;
-  }
 `

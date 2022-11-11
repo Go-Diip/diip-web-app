@@ -18,6 +18,9 @@ export const TextWrapper = styled.div`
 export const Image = styled(CustomImage)`
   width: 100%;
   height: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
   img {
     width: 100%;
     height: 100%;
@@ -31,7 +34,7 @@ export const Title = styled.h2`
   line-height: 32px;
   margin-bottom: 8px;
 
-  ${({ theme }) => theme.breakpoints.up("sm")} {
+  ${({ theme }) => theme.breakpoints.up("md")} {
     margin-bottom: ${({ theme }) => theme.typography.pxToRem(56)};
     font-size: ${({ theme }) => theme.typography.pxToRem(40)};
     line-height: 48px;
