@@ -8,7 +8,6 @@ export const Wrapper = styled(SectionWrapper)`
   backdrop-filter: blur(16px);
   color: white;
   .swiper {
-    padding: 1rem;
     ${({ theme }) => theme.breakpoints.up("sm")} {
       padding: 0;
       margin-bottom: 0;

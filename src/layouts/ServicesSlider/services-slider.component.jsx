@@ -6,14 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
 import "swiper/css/navigation"
-import { Container, Grid, useMediaQuery, useTheme } from "@mui/material"
+import { Container, Grid } from "@mui/material"
 import ServiceCard from "../../components/service-card/service-card.component"
 import SliderArrow from "../../components/slider-arrow/slider-arrow.component"
+import Box from "@mui/system/Box"
 
 const ServicesSlider = ({ title, description, slides }) => {
   const [slideIndex, setSlideIndex] = useState(0)
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
   const handleChangeSlide = value => {
     setSlideIndex(value)
@@ -28,61 +27,60 @@ const ServicesSlider = ({ title, description, slides }) => {
       {/*  </S.TextWrapper>*/}
       {/*</Container>*/}
 
-      {!isMobile ? (
-        <>
-          <Container>
-            <Swiper
-              allowTouchMove={false}
-              modules={[Navigation, Pagination]}
-              //pagination={{ clickable: true }}
-              spaceBetween={48}
-              // loop={isSm}
-              navigation={{
-                prevEl: ".prev",
-                nextEl: ".next",
-              }}
-              slidesPerView={1}
-            >
-              {slides.map((slide, index) => (
-                <SwiperSlide key={`service-card-${index}`}>
-                  <ServiceCard {...slide} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </Container>
-          <Container maxWidth="md">
-            <S.NavigationWrapper>
-              <S.IndicatorWrapper>
-                <S.Number>0{slideIndex + 1}</S.Number>
-                <S.LineWrapper>
-                  <S.WhiteLine
-                    style={{ width: (290 / slides.length) * (slideIndex + 1) }}
-                  />
-                </S.LineWrapper>
-                <S.Number>0{slides.length}</S.Number>
-              </S.IndicatorWrapper>
-              <S.ArrowGrid>
-                <SliderArrow
-                  className="prev"
-                  onClick={() =>
-                    handleChangeSlide(slideIndex !== 0 ? slideIndex - 1 : 0)
-                  }
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <Container>
+          <Swiper
+            allowTouchMove={false}
+            modules={[Navigation, Pagination]}
+            //pagination={{ clickable: true }}
+            spaceBetween={48}
+            // loop={isSm}
+            navigation={{
+              prevEl: ".prev",
+              nextEl: ".next",
+            }}
+            slidesPerView={1}
+          >
+            {slides.map((slide, index) => (
+              <SwiperSlide key={`service-card-${index}`}>
+                <ServiceCard {...slide} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Container>
+        <Container maxWidth="md">
+          <S.NavigationWrapper>
+            <S.IndicatorWrapper>
+              <S.Number>0{slideIndex + 1}</S.Number>
+              <S.LineWrapper>
+                <S.WhiteLine
+                  style={{ width: (290 / slides.length) * (slideIndex + 1) }}
                 />
-                <SliderArrow
-                  className="next"
-                  onClick={() =>
-                    handleChangeSlide(
-                      slideIndex !== slides.length - 1
-                        ? slideIndex + 1
-                        : slides.length - 1
-                    )
-                  }
-                />
-              </S.ArrowGrid>
-            </S.NavigationWrapper>
-          </Container>
-        </>
-      ) : (
+              </S.LineWrapper>
+              <S.Number>0{slides.length}</S.Number>
+            </S.IndicatorWrapper>
+            <S.ArrowGrid>
+              <SliderArrow
+                className="prev"
+                onClick={() =>
+                  handleChangeSlide(slideIndex !== 0 ? slideIndex - 1 : 0)
+                }
+              />
+              <SliderArrow
+                className="next"
+                onClick={() =>
+                  handleChangeSlide(
+                    slideIndex !== slides.length - 1
+                      ? slideIndex + 1
+                      : slides.length - 1
+                  )
+                }
+              />
+            </S.ArrowGrid>
+          </S.NavigationWrapper>
+        </Container>
+      </Box>
+      <Box sx={{ display: { xs: "block", md: "none" } }}>
         <Container>
           <Grid container spacing={4}>
             {slides.map((slide, index) => (
@@ -92,7 +90,7 @@ const ServicesSlider = ({ title, description, slides }) => {
             ))}
           </Grid>
         </Container>
-      )}
+      </Box>
     </S.Wrapper>
   )
 }
