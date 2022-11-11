@@ -6,7 +6,8 @@ import { Container, Typography } from "@mui/material"
 export const Wrapper = styled(SectionWrapper)`
   background-color: transparent;
   backdrop-filter: blur(16px);
-  height: 100vh;
+  height: 100vh; /* fallback for Js load */
+  height: var(--doc-height);
   position: relative;
   z-index: 4;
   display: flex;
@@ -29,24 +30,34 @@ export const CustomContainer = styled(Container)`
 `
 
 export const Title = styled.h1`
-  font-size: 2.2rem;
-  line-height: 140%;
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.typography.pxToRem(64)};
+  //line-height: 140%;
+  font-weight: 700;
   color: ${({ theme }) => theme.palette.text.light};
-  text-align: center;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 64px;
   margin: auto;
   //white-space: nowrap;
 
   > span {
     display: inline-block;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 64px;
     -webkit-text-stroke: 1px ${({ theme }) => theme.palette.text.light};
     color: transparent;
   }
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
+    line-height: normal;
+    padding: 0;
+    text-align: center;
     font-size: ${({ theme }) => theme.typography.pxToRem(58)};
+
+    > span {
+      line-height: 140%;
+    }
   }
 
   ${({ theme }) => theme.breakpoints.up("lg")} {

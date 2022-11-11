@@ -44,6 +44,15 @@ const Layout = ({ children, hideGradient }) => {
     if (process.env.GATSBY_ACTIVE_ENV === "production") {
       LogRocket.init("vjk8vl/diip")
     }
+
+    if (isBrowser()) {
+      const documentHeight = () => {
+        const doc = document.documentElement
+        doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
+      }
+      window.addEventListener("resize", documentHeight)
+      documentHeight()
+    }
   }, [])
   return (
     <>

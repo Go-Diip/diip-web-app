@@ -174,6 +174,9 @@ const wordpress = css`
 `
 
 export const GlobalStyles = createGlobalStyle`
+  :root {
+    --doc-height: 100%;
+  }
   body {
        background-color: ${({ theme }) => theme.palette.primary.main};
   }
