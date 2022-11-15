@@ -2,8 +2,9 @@ import styled from "styled-components"
 
 export const Wrapper = styled.footer`
   color: white;
+  position: relative;
+  z-index: 3;
   //padding: 4em 0 0;
-  background-color: ${({ theme }) => theme.palette.primary.main};
 
   // ${({ theme }) => theme.breakpoints.down("sm")} {
   //   .MuiContainer-root {
