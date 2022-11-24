@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default function HTML(props) {
+  const isProduction = process.env.GATSBY_ACTIVE_ENV === "production"
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -41,6 +42,23 @@ export default function HTML(props) {
           as="font"
           crossOrigin="anonymous"
         />
+        {isProduction && (
+          <>
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-1Z8RQ3FZTG"
+            />
+
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'G-1Z8RQ3FZTG');`,
+              }}
+            />
+          </>
+        )}
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
