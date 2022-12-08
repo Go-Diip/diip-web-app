@@ -10,7 +10,7 @@ const HomeHero = ({ title }) => {
       <S.CustomContainer>
         <div>
           <S.Title>
-            Digital products that{parse("<br>")}
+            Digital experiences that{parse("<br>")}
             <Typewriter
               words={["deeply", "diiply"]}
               loop={1}
