@@ -28,6 +28,17 @@ export const Image = styled(CustomImage)`
     border-top-right-radius: 8px;
     object-fit: cover !important;
   }
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    border-top-right-radius: unset;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    img {
+      border-top-right-radius: unset;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+  } ;
 `
 
 export const Title = styled.h2`
