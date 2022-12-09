@@ -6,7 +6,7 @@ import parse from "html-react-parser"
 
 const HomeHero = () => {
   return (
-    <S.Wrapper className="homeHero">
+    <S.Wrapper>
       <S.CustomContainer>
         <div>
           <S.Title>
