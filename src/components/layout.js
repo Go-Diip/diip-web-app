@@ -48,7 +48,7 @@ const Layout = ({ children, hideGradient }) => {
     if (isBrowser()) {
       const documentHeight = () => {
         const doc = document.documentElement
-        doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
+        doc.style.setProperty("--viewport-height", `${window.innerHeight}px`)
       }
       window.addEventListener("resize", documentHeight)
       documentHeight()

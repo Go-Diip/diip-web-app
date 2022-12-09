@@ -6,7 +6,7 @@ import { Container, Typography } from "@mui/material"
 export const Wrapper = styled(SectionWrapper)`
   background-color: transparent;
   backdrop-filter: blur(16px);
-  height: var(--doc-height, 100vh);
+  height: var(--viewport-height, 100vh);
   position: relative;
   z-index: 4;
   display: flex;
