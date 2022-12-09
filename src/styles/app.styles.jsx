@@ -243,6 +243,10 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 16px 16px 0px 0px;
   }
   
+  .homeHero {
+    height: 100vh;
+  }
+  
   ${wordpress}
   ${snipcart}
 `

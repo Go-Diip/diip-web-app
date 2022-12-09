@@ -4,9 +4,9 @@ import ScrollTo from "../../components/scroll-to/scroll-to.component"
 import { Typewriter } from "react-simple-typewriter"
 import parse from "html-react-parser"
 
-const HomeHero = ({ title }) => {
+const HomeHero = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper className="homeHero">
       <S.CustomContainer>
         <div>
           <S.Title>
