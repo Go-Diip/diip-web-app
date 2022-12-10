@@ -29,13 +29,12 @@ export const CustomContainer = styled(Container)`
 `
 
 export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.typography.pxToRem(64)};
+  font-size: ${({ theme }) => theme.typography.pxToRem(52)};
   //line-height: 140%;
   font-weight: 700;
   color: ${({ theme }) => theme.palette.text.light};
   text-align: left;
-  padding-left: 2rem;
-  padding-right: 2rem;
+
   line-height: 64px;
   margin: auto;
   //white-space: nowrap;
@@ -49,10 +48,11 @@ export const Title = styled.h1`
   }
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
+    padding-left: 2rem;
+    padding-right: 2rem;
     line-height: normal;
-    padding: 0;
     text-align: center;
-    font-size: ${({ theme }) => theme.typography.pxToRem(58)};
+    font-size: ${({ theme }) => theme.typography.pxToRem(64)};
 
     > span {
       line-height: 140%;
