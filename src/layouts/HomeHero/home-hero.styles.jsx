@@ -48,11 +48,10 @@ export const Title = styled.h1`
   }
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding:0;
     line-height: normal;
     text-align: center;
-    font-size: ${({ theme }) => theme.typography.pxToRem(64)};
+    font-size: ${({ theme }) => theme.typography.pxToRem(58)};
 
     > span {
       line-height: 140%;
