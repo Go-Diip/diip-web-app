@@ -29,11 +29,13 @@ export const CustomContainer = styled(Container)`
 `
 
 export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.typography.pxToRem(52)};
+  font-size: ${({ theme }) => theme.typography.pxToRem(64)};
   //line-height: 140%;
   font-weight: 700;
   color: ${({ theme }) => theme.palette.text.light};
   text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   line-height: 64px;
   margin: auto;
