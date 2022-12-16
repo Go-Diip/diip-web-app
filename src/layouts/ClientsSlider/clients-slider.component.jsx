@@ -14,7 +14,9 @@ const ClientSlider = ({ slides, title }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
-  if (!slides) return null
+  console.log(slides)
+
+  if (!slides.length) return null
 
   return (
     <S.Wrapper>
@@ -53,8 +55,8 @@ const ClientSlider = ({ slides, title }) => {
             }}
             loop={true}
           >
-            {slides.map(({ image, url }, index) => (
-              <SwiperSlide key={`slider-item-${index}`}>
+            {slides?.map(({ image, url }, index) => (
+              <SwiperSlide key={`slider-client-item-${index}`}>
                 <CustomLink url={url} target="_blank">
                   <S.SlideImage
                     fit="cover"
