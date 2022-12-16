@@ -14,9 +14,8 @@ const ClientSlider = ({ slides, title }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
-  console.log(slides)
 
-  if (!slides.length) return null
+  if (!slides && !slides.length) return null
 
   return (
     <S.Wrapper>
