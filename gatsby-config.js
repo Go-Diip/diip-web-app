@@ -7,7 +7,9 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
+console.log(
+  `This WordPress Endpoint is used: '${process.env.GATSBY_WORDPRESS_URL}'`
+)
 
 module.exports = {
   siteMetadata: {
@@ -97,7 +99,7 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `${process.env.WORDPRESS_URL}/graphql`,
+        url: `${process.env.GATSBY_WORDPRESS_URL}/graphql`,
       },
     },
 

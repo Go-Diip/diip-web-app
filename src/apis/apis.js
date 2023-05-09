@@ -14,5 +14,5 @@ export const gravityFormsApi = axios.create({
 })
 
 export const contactFormApi = axios.create({
-  baseURL: `${process.env.WORDPRESS_URL}/wp-json/contact-form-7/v1/contact-forms`,
+  baseURL: `${process.env.GATSBY_WORDPRESS_URL}/wp-json/contact-form-7/v1/contact-forms`,
 })
