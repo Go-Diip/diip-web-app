@@ -36,6 +36,7 @@ export const Title = styled.h1`
   text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
+
   line-height: 64px;
   margin: auto;
   //white-space: nowrap;
@@ -49,8 +50,8 @@ export const Title = styled.h1`
   }
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
+    padding:0;
     line-height: normal;
-    padding: 0;
     text-align: center;
     font-size: ${({ theme }) => theme.typography.pxToRem(58)};
 
