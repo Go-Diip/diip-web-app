@@ -2,8 +2,9 @@ import styled from "styled-components"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Button from "@mui/material/Button"
 import { darken } from "@mui/system"
+import { LoadingButton } from "@mui/lab"
 
-export const CustomButton = styled(Button)`
+export const CustomButton = styled(LoadingButton)`
   color: white;
   background-color: ${({ theme, color }) =>
     theme.palette[color]
@@ -14,6 +15,8 @@ export const CustomButton = styled(Button)`
   font-size: ${({ theme }) => theme.typography.pxToRem(14)};
   font-weight: 600 !important;
   border-radius: 50px;
+
+  ${({ loading }) => (loading ? `.text { opacity: 0; }` : ``)}
 
   // ${({ theme }) => theme.breakpoints.up("md")} {
   //   padding: 0.5em 1.5em;

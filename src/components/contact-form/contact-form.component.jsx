@@ -186,13 +186,9 @@ const ContactForm = () => {
         <S.SubmitCustomButton
           type="submit"
           className="blue"
+          loading={isLoading}
           disabled={isLoading}
         >
-          {isLoading && (
-            <S.FormSpinner>
-              <S.CustomSpinner />
-            </S.FormSpinner>
-          )}
           SEND
         </S.SubmitCustomButton>
       </S.FormWrapper>
