@@ -10,7 +10,6 @@ import PropTypes from "prop-types"
 
 import Header from "../components/header/header.component"
 import { AppContainer, Gradient, GradientWrapper } from "../styles/app.styles"
-import Footer from "./footer/footer.component"
 // import { gsap } from "gsap"
 // import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { isBrowser } from "../utils"
@@ -61,7 +60,6 @@ const Layout = ({ children, hideGradient }) => {
       </GradientWrapper>
       <Header />
       <AppContainer className="wrapper">{children}</AppContainer>
-      <Footer />
     </>
   )
 }

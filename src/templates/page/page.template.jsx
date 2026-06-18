@@ -3,6 +3,14 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import { getPageLayout } from "../../get-layout-utils"
 import SEO from "../../components/seo/seo.component"
+import HomeHero from "../../layouts/HomeHero"
+
+// While the site is in "Coming Soon" mode we only surface two things:
+// the home hero (used as the coming-soon screen) and the contact section.
+// Every other page builder layout is intentionally hidden.
+const COMING_SOON_ALLOWED_LAYOUTS = ["ContactSection"]
+
+const getLayoutName = layout => layout?.fieldGroupName?.split("_").pop().trim()
 
 export const query = graphql`
   query PageQuery($id: String!) {
@@ -90,11 +98,26 @@ export const query = graphql`
 export const Head = ({ data }) => <SEO data={data?.wpPage?.seo} />
 
 const PageTemplate = ({ data }) => {
-  const { seo, slug, pageBuilder, title } = data.wpPage
-  const layouts = pageBuilder.layouts || []
+  const { seo, pageBuilder, isFrontPage } = data.wpPage
+  const layouts = pageBuilder?.layouts || []
+
+  // The front page becomes the Coming Soon screen: hero only.
+  if (isFrontPage) {
+    return (
+      <Layout {...pageBuilder?.pageConfiguration} seo={seo}>
+        <HomeHero />
+      </Layout>
+    )
+  }
+
+  // Any other page (e.g. Contact) only keeps the allow-listed layouts.
+  const visibleLayouts = layouts.filter(layout =>
+    COMING_SOON_ALLOWED_LAYOUTS.includes(getLayoutName(layout))
+  )
+
   return (
-    <Layout {...pageBuilder.pageConfiguration} seo={seo}>
-      {layouts.map(layout => getPageLayout(layout))}
+    <Layout {...pageBuilder?.pageConfiguration} seo={seo}>
+      {visibleLayouts.map(layout => getPageLayout(layout))}
     </Layout>
   )
 }

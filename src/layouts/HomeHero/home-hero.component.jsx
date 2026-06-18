@@ -1,32 +1,37 @@
 import React from "react"
 import * as S from "./home-hero.styles"
-import ScrollTo from "../../components/scroll-to/scroll-to.component"
 import { Typewriter } from "react-simple-typewriter"
 import parse from "html-react-parser"
 
 const HomeHero = () => {
   return (
     <S.Wrapper>
-      <S.CustomContainer>
-        <div>
+      <S.CustomContainer maxWidth="md">
+        <S.Content>
+          <S.Eyebrow>
+            <S.Dot aria-hidden="true" />
+            Design &amp; development studio
+          </S.Eyebrow>
           <S.Title>
-            Digital products that{parse("<br>")}
+            Something{parse("<br>")}
             <Typewriter
-              words={["deeply", "diiply"]}
+              words={["deep", "diip"]}
               loop={1}
               cursor
               cursorStyle="|"
-              typeSpeed={100}
-              deleteSpeed={70}
-              delaySpeed={1000}
+              typeSpeed={120}
+              deleteSpeed={80}
+              delaySpeed={1200}
             />{" "}
-            connect.
+            is coming.
           </S.Title>
-        </div>
+          <S.Subtitle>
+            We&apos;re a design &amp; development boutique crafting digital
+            products that deeply connect brands with the people who matter. Our
+            new home is almost here — got a project in mind? Let&apos;s talk.
+          </S.Subtitle>
+        </S.Content>
       </S.CustomContainer>
-      <S.ScrollWrapper>
-        <ScrollTo />
-      </S.ScrollWrapper>
     </S.Wrapper>
   )
 }
