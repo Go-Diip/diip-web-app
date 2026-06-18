@@ -58,10 +58,11 @@ export const Content = styled.div`
   }
 `
 
-export const Eyebrow = styled.span`
+export const Status = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
+  margin-top: 0.5rem;
   color: rgba(247, 251, 255, 0.65);
   font-size: ${({ theme }) => theme.typography.pxToRem(12)};
   font-weight: 600;
@@ -108,18 +109,5 @@ export const Title = styled.h1`
   ${({ theme }) => theme.breakpoints.up("lg")} {
     font-size: ${({ theme }) => theme.typography.pxToRem(96)};
     line-height: 1.05;
-  }
-`
-
-export const Subtitle = styled.p`
-  max-width: 620px;
-  margin: 0;
-  color: rgba(247, 251, 255, 0.72);
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.typography.pxToRem(16)};
-  line-height: 1.6;
-
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    font-size: ${({ theme }) => theme.typography.pxToRem(20)};
   }
 `
