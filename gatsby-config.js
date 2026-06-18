@@ -10,7 +10,6 @@ require("dotenv").config({
 console.log(
   `This WordPress Endpoint is used: '${process.env.GATSBY_WORDPRESS_URL}'`
 )
-
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.godiip.com`,
